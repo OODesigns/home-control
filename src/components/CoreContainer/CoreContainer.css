@@ -1,0 +1,11 @@
+/* CoreContainer styling */
+.core-container {
+    display: flex;                     /* Mimics VerticalLayout behaviour */
+    flex-direction: column;            /* Stacks children vertically */
+    width: 100%;                       /* Full width of the parent */
+    height: 100%;                      /* Full height of the parent */
+    margin: 0;                         /* Removes default margin */
+    background-color: #14253D;         /* Sets the background colour */
+    overflow: hidden;                  /* Prevents scrollbars */
+    box-sizing: border-box;            /* Includes padding/border in width/height */
+}

@@ -1,0 +1,17 @@
+.header-container {
+    display: flex;
+    justify-content: space-between; /* Space between the items */
+    align-items: center;           /* Vertically centre the content */
+    width: 100%;                   /* Full width of the parent */
+    padding: 1vmin 2vmin;          /* 1vmin for top/bottom, 2vmin for left/right */
+    background-color: #1E3A61;     /* Background colour */
+}
+
+.header-caption {
+    flex: 0;                 /* Prevents the caption from stretching */
+    margin: 0 auto;          /* Centres the caption horizontally (Spacing.of(ZERO, AUTO)) */
+    font-weight: bold;       /* Matches setFontWeight(BOLD) */
+    font-size: 4vmin;        /* Matches FontSize.of(HEADING1) (4.0vmin) */
+    color: white;           /* Matches TEXT_COLOR = white */
+    text-align: center;      /* Ensures the text is centred within its container */
+}

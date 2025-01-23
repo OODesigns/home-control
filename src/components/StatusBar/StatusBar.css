@@ -1,0 +1,10 @@
+/* StatusBar container styling */
+.status-bar {
+    display: flex;                     /* Creates a flexbox container */
+    justify-content: space-between;    /* Places items at the two ends */
+    align-items: center;               /* Vertically centres the items */
+    width: 100%;                       /* Full width of the parent container */
+    padding: 1vmin 2vmin;              /* 1vmin top/bottom, 2vmin left/right */
+    background-color: #1E3A61;         /* Background colour as specified */
+    box-sizing: border-box;            /* Includes padding in width/height calculations */
+}

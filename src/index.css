@@ -1,68 +1,40 @@
+/*
+  :root is used to define global styles and CSS variables that apply to the entire document.
+  These styles will cascade to all elements, including those outside the React app.
+  Use it for consistent global settings like font families and colours.
+*/
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --background-color: #14253D; /* Global background colour for the entire app */
+  --font-family: 'Lato', system-ui, Avenir, Helvetica, Arial, sans-serif; /* Global font family for text */
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/*
+  Global styles for the <html> and <body> elements:
+  - Removes default browser margin and padding to avoid unwanted spacing.
+  - Ensures the app fills the entire width and height of the viewport.
+  - Sets a global font family and background colour.
+  - Disables scrollbars with overflow: hidden (prevents scrolling).
+*/
+html, body {
+  margin: 0; /* Removes default margin added by browsers */
+  padding: 0; /* Removes default padding added by browsers */
+  width: 100%; /* Ensures the content spans the full width of the viewport */
+  height: 100%; /* Ensures the content spans the full height of the viewport */
+  font-family: var(--font-family), serif; /* Uses the font family defined in :root */
+  background-color: var(--background-color); /* Sets the background colour globally */
+  overflow: hidden; /* Disables scrollbars (hides content that overflows the viewport) */
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+/*
+  #root is the container where React mounts the application.
+  It spans the entire viewport, ensuring that React content fills the screen.
+  Use this for layout-specific styling (e.g., flexbox, centring content).
+*/
+#root {
+  width: 100%; /* Ensures the React app spans the full width of the viewport */
+  height: 100%; /* Ensures the React app spans the full height of the viewport */
+  display: flex; /* Enables a flexbox layout for child components */
+  flex-direction: column; /* Stacks child components vertically by default */
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
+
