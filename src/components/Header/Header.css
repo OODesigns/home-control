@@ -9,9 +9,9 @@
 
 .header-caption {
     flex: 0;                 /* Prevents the caption from stretching */
-    margin: 0 auto;          /* Centres the caption horizontally (Spacing.of(ZERO, AUTO)) */
-    font-weight: bold;       /* Matches setFontWeight(BOLD) */
-    font-size: 4vmin;        /* Matches FontSize.of(HEADING1) (4.0vmin) */
-    color: white;           /* Matches TEXT_COLOR = white */
+    margin: 0 auto;          /* Centres the caption horizontally  */
+    font-weight: bold;
+    font-size: 4vmin;
+    color: white;
     text-align: center;      /* Ensures the text is centred within its container */
 }
