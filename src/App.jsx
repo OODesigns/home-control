@@ -1,9 +1,9 @@
 import './App.css'
-import NavigationalContainer from "./components/NavigationalContainer/NavigationalContainer.jsx";
+import HomeView from "./views/HomeView/HomeView.jsx";
 
 export default function App() {
   return (
-     <NavigationalContainer caption="Home" />
+     <HomeView/>
   );
 }
 

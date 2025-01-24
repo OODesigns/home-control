@@ -1,26 +1,18 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import PropTypes from "prop-types";
-import FanButton from "./FanButton.jsx";
+import IncreaseSpeed from "./IncreaseSpeed.jsx";
+import DecreaseSpeed from "./DecreaseSpeed.jsx";
 import FanDisplay from "./FanDisplay.jsx";
 import FanBoostButton from "./FanBoostButton.jsx";
+import useRotation from "./useRotation.js";
 import "./FanSpeedControl.css";
 
 export default function FanSpeedControl({ onSpeedChange, onBoostChange, initialSpeed = 2, initialBoost = false }) {
     const [speed, setSpeed] = useState(initialSpeed);
     const [boostActive, setBoostActive] = useState(initialBoost);
-    const fanGroupRef = useRef(null);
-    const rotationRef = useRef(0);
-    const animationFrameRef = useRef(null);
 
-    useEffect(() => {
-        if (boostActive) {
-            startRotation();
-        } else {
-            stopRotation();
-        }
-
-        return () => stopRotation();
-    }, [boostActive]);
+    // Use custom hook for rotation handling
+    const fanGroupRef = useRotation(boostActive);
 
     const handleSpeedChange = (delta) => {
         const newSpeed = Math.max(0, speed + delta); // Prevent negative speed
@@ -34,31 +26,12 @@ export default function FanSpeedControl({ onSpeedChange, onBoostChange, initialS
         if (onBoostChange) onBoostChange(newBoostState);
     };
 
-    const startRotation = () => {
-        const speed = 60; // degrees per second
-        const rotate = () => {
-            rotationRef.current = (rotationRef.current + (speed / 60)) % 360;
-            if (fanGroupRef.current) {
-                fanGroupRef.current.style.transform = `rotate(${rotationRef.current}deg)`;
-            }
-            animationFrameRef.current = requestAnimationFrame(rotate);
-        };
-        rotate();
-    };
-
-    const stopRotation = () => {
-        if (animationFrameRef.current) {
-            cancelAnimationFrame(animationFrameRef.current);
-            animationFrameRef.current = null;
-        }
-    };
-
     return (
         <div className="fan-speed-control">
-            <FanButton caption="Increase Speed" onClick={() => handleSpeedChange(1)} />
+            <IncreaseSpeed onClick={() => handleSpeedChange(1)} />
             <FanBoostButton boostActive={boostActive} toggleBoost={toggleBoost} fanGroupRef={fanGroupRef} />
             <FanDisplay speed={speed} />
-            <FanButton caption="Decrease Speed" onClick={() => handleSpeedChange(-1)} />
+            <DecreaseSpeed onClick={() => handleSpeedChange(-1)} />
         </div>
     );
 }
