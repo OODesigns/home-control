@@ -29,7 +29,7 @@ export default function FanSpeedControl({ onSpeedChange, onBoostChange, initialS
     return (
         <div className="fan-speed-control">
             <IncreaseSpeed onClick={() => handleSpeedChange(1)} />
-            <FanBoostButton boostActive={boostActive} toggleBoost={toggleBoost} fanGroupRef={fanGroupRef} />
+            {/*<FanBoostButton boostActive={boostActive} toggleBoost={toggleBoost} fanGroupRef={fanGroupRef} />*/}
             <FanDisplay speed={speed} />
             <DecreaseSpeed onClick={() => handleSpeedChange(-1)} />
         </div>

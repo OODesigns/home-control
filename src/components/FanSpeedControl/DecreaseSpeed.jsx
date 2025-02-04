@@ -6,11 +6,10 @@ export default function DecreaseSpeed({ onClick }) {
         <FanButton
             ariaLabel="Decrease Speed"
             onClick={onClick}
-            rectCoords={{ x: 35, y: 244 }}
             polylineCoords={{
-                start: { x: 35, y: 244 },
-                middle: { x: 60, y: 269 },
-                end: { x: 85, y: 244 },
+                start: { x: 35, y: 56 },
+                middle: { x: 60, y: 81 },
+                end: { x: 85, y: 56 },
             }}
         />
     );

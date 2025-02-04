@@ -17,11 +17,6 @@
     height: 25px; /* Match the rect height */
 }
 
-.fan-button-svg {
-    width: 100%; /* Ensure SVG scales properly */
-    height: 100%;
-}
-
 .fan-container {
     display: flex;
     justify-content: center;

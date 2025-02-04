@@ -1,12 +1,12 @@
-.fan-speed-control {
-    width: 120px;
-    height: 300px;
-    background-color: #1E3A8A; /* Match the background from the SVG */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Distribute controls vertically */
-    align-items: center; /* Centre-align everything horizontally */
-    position: relative;
-    overflow: hidden; /* Ensure nothing exceeds the container */
-    border-radius: 4px; /* Optional: to make it visually cleaner */
+
+.fans-speed-control {
+    display: flex; /* Ensure the control is a flex container */
+    justify-content: center;
+    align-items: center;
+    width: 5vmin; /* Match SVG dimensions */
+    height: auto;
+    background: none; /* Remove any background */
+    border: none; /* Remove border */
+    padding: 0; /* Reset padding */
+    box-sizing: border-box; /* Ensure dimensions include padding/border */
 }

@@ -1,24 +1,25 @@
+// FanButton.jsx
 import PropTypes from "prop-types";
 import "./FanButton.css";
 
-export default function FanButton({ ariaLabel, onClick, rectCoords, polylineCoords }) {
+export default function FanButton({ ariaLabel, onClick, polylineCoords }) {
     return (
         <button onClick={onClick} aria-label={ariaLabel} className="fan-button">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 300" className="fan-button-svg">
+            <svg width="120" height="120" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" className="fan-button-svg">
                 <g className="vertical-arrow-area">
                     <rect
-                        x={rectCoords.x}
-                        y={rectCoords.y}
-                        width="50"
-                        height="25"
-                        fill="transparent"
+                        x="0"
+                        y="0"
+                        width="120"
+                        height="100"
+                        fill="1E3A8A"
                         style={{ cursor: "pointer" }}
                     />
                     <polyline
                         className="vertical-arrow"
-                        points={`${polylineCoords.start.x},${polylineCoords.start.y} 
-                                  ${polylineCoords.middle.x},${polylineCoords.middle.y} 
-                                  ${polylineCoords.end.x},${polylineCoords.end.y}`}
+                        points={`${polylineCoords.start.x},${polylineCoords.start.y}
+                                 ${polylineCoords.middle.x},${polylineCoords.middle.y}
+                                 ${polylineCoords.end.x},${polylineCoords.end.y}`}
                         fill="none"
                         stroke="white"
                         strokeWidth="3"

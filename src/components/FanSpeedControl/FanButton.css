@@ -1,25 +1,18 @@
-.fan-button {
-    all: unset; /* Remove default button styles */
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    padding: 0;
-    width: 120px; /* Match the SVG width */
-    height: 300px; /* Match the SVG height */
-}
-
-.fan-button-svg {
-    width: 100%; /* Ensure SVG scales properly */
-    height: 100%;
-}
-
 .vertical-arrow {
-    transition: stroke 0.2s; /* Smooth hover transition for arrow */
+    transition: stroke 0.2s ease-in-out;
     stroke: white;
     stroke-width: 3;
 }
 
 .vertical-arrow-area:hover .vertical-arrow {
-    stroke: lightblue; /* Change arrow colour on hover */
+    stroke: lightblue; /* Hover effect */
 }
+
+.fan-button {
+    cursor: pointer !important;
+    width: 5vmin !important;
+    height: auto;
+    all: unset; /* Remove default button styles */
+}
+
+
