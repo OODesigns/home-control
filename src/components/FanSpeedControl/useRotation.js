@@ -1,37 +1,36 @@
-import { useRef, useEffect } from "react";
+import { useEffect, useRef } from 'react';
 
-export default function useRotation(isActive, speed = 60) {
-    const rotationRef = useRef(0);
-    const animationFrameRef = useRef(null);
-    const elementRef = useRef(null);
+export default function useRotation(boostActive) {
+    const fanGroupRef = useRef(null);
+    const animationRef = useRef(null);
+    const currentRotation = useRef(0);
 
     useEffect(() => {
-        if (isActive) {
-            startRotation();
+        const fanGroup = fanGroupRef.current;
+        if (!fanGroup) return;
+
+        // Set the transform origin once.
+        if (boostActive) {
+            const speed = 60; // degrees per second
+            const rotate = () => {
+                currentRotation.current = (currentRotation.current + speed / 60) % 360;
+                fanGroup.style.transform = `rotate(${currentRotation.current}deg)`;
+                animationRef.current = requestAnimationFrame(rotate);
+            };
+            rotate();
         } else {
-            stopRotation();
-        }
-
-        return () => stopRotation();
-    }, [isActive]);
-
-    const startRotation = () => {
-        const rotate = () => {
-            rotationRef.current = (rotationRef.current + speed / 60) % 360;
-            if (elementRef.current) {
-                elementRef.current.style.transform = `rotate(${rotationRef.current}deg)`;
+            if (animationRef.current) {
+                cancelAnimationFrame(animationRef.current);
+                animationRef.current = null;
             }
-            animationFrameRef.current = requestAnimationFrame(rotate);
-        };
-        rotate();
-    };
-
-    const stopRotation = () => {
-        if (animationFrameRef.current) {
-            cancelAnimationFrame(animationFrameRef.current);
-            animationFrameRef.current = null;
         }
-    };
 
-    return elementRef;
+        return () => {
+            if (animationRef.current) {
+                cancelAnimationFrame(animationRef.current);
+            }
+        };
+    }, [boostActive]);
+
+    return fanGroupRef;
 }

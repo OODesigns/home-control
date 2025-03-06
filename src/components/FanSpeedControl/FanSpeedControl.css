@@ -1,12 +1,7 @@
 
-.fans-speed-control {
-    display: flex; /* Ensure the control is a flex container */
-    justify-content: center;
+.fan-speed-control {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    width: 5vmin; /* Match SVG dimensions */
-    height: auto;
-    background: none; /* Remove any background */
-    border: none; /* Remove border */
-    padding: 0; /* Reset padding */
-    box-sizing: border-box; /* Ensure dimensions include padding/border */
+    gap: 8px; /* Set default spacing (adjustable) */
 }

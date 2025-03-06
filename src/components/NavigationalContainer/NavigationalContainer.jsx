@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 import Header from "../Header/Header"; // Assuming you have a Header component
-import CoreContainer from "../CoreContainer/CoreContainer"; // Assuming you have a CoreContainer component
 import StatusBar from "../StatusBar/StatusBar"; // Assuming you have a StatusBar component
-import "./NavigationalContainer.css";
+import "./NavigationalContainer.scss";
+import HorizontalContainer from "../HorizontalContainer/HorizontalContainer.jsx";
 
 export default function NavigationalContainer ({ caption, children }) {
     return (
@@ -10,7 +10,7 @@ export default function NavigationalContainer ({ caption, children }) {
             {/* Header with the caption */}
             <Header caption={caption}/>
             {/* CoreContainer with the children */}
-            <CoreContainer>{children}</CoreContainer>
+            <HorizontalContainer id="navigational-child-container">{children}</HorizontalContainer>
             {/* StatusBar */}
             <StatusBar />
         </div>

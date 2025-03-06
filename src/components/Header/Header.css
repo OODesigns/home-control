@@ -5,13 +5,12 @@
     width: 100%;                   /* Full width of the parent */
     padding: 1vmin 2vmin;          /* 1vmin for top/bottom, 2vmin for left/right */
     background-color: #1E3A61;     /* Background colour */
+    box-sizing: border-box; /* Ensure padding is respected */
 }
 
 .header-caption {
-    flex: 0;                 /* Prevents the caption from stretching */
     margin: 0 auto;          /* Centres the caption horizontally  */
     font-weight: bold;
     font-size: 4vmin;
     color: white;
-    text-align: center;      /* Ensures the text is centred within its container */
 }

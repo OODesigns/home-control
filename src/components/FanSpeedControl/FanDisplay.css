@@ -1,8 +1,7 @@
 /* Speed Number */
 .speed-number {
-    font-size: 5vmin;
-    text-anchor: middle;
-    dominant-baseline: hanging;
+    font-size: 5rem;
+    text-align: center;
     color: white
 }
 

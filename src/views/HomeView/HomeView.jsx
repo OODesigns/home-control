@@ -1,5 +1,7 @@
 import NavigationalContainer from '../../components/NavigationalContainer/NavigationalContainer';
 import FanSpeedControl from '../../components/FanSpeedControl/FanSpeedControl';
+import HorizontalContainer from "../../components/HorizontalContainer/HorizontalContainer.jsx";
+import './HomeView.scss'; // Import the SCSS file
 
 export default function HomeView() {
     const handleSpeedChange = (newSpeed) => {
@@ -12,12 +14,23 @@ export default function HomeView() {
 
     return (
         <NavigationalContainer caption="Home">
-            <FanSpeedControl
-                onSpeedChange={handleSpeedChange}
-                onBoostChange={handleBoostChange}
-                initialSpeed={2}
-                initialBoost={false}
-            />
+            <div className="home-view">
+                {/* Left Fixed 25% */}
+                <HorizontalContainer className="home-view__left">
+                </HorizontalContainer>
+                {/* Middle Flexible and Centered */}
+                <HorizontalContainer className="home-view__middle">
+                </HorizontalContainer>
+                {/* Right Fixed 25% */}
+                <HorizontalContainer className="home-view__right">
+                    <FanSpeedControl
+                        onSpeedChange={handleSpeedChange}
+                        onBoostChange={handleBoostChange}
+                        initialSpeed={2}
+                        initialBoost={false}
+                    />
+                </HorizontalContainer>
+            </div>
         </NavigationalContainer>
     );
 }
