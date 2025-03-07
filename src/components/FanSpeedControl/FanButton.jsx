@@ -1,6 +1,6 @@
 // FanButton.jsx
 import PropTypes from "prop-types";
-import "./FanButton.css";
+import "./FanButton.scss";
 
 export default function FanButton({ ariaLabel, onClick, path }) {
     return (

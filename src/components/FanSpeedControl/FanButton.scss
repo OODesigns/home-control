@@ -10,9 +10,10 @@
 
 .fan-button {
     cursor: pointer !important;
-    width: 5vmin !important;
-    height: auto;
     all: unset; /* Remove default button styles */
+    margin-bottom: 3vmin;
+    margin-top: 2vmin;
 }
+
 
 

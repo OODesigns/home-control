@@ -5,7 +5,7 @@ import DecreaseSpeed from "./DecreaseSpeed.jsx";
 import FanDisplay from "./FanDisplay.jsx";
 import FanBoostButton from "./FanBoostButton.jsx";
 import useRotation from "./useRotation.js";
-import "./FanSpeedControl.css";
+import "./FanSpeedControl.scss";
 import VerticalLayout from "../VerticalContainer/VerticalContainer.jsx";
 
 export default function FanSpeedControl({ onSpeedChange, onBoostChange, initialSpeed = 2, initialBoost = false }) {
@@ -29,13 +29,11 @@ export default function FanSpeedControl({ onSpeedChange, onBoostChange, initialS
     };
 
     return (
-        <VerticalLayout style={{alignContent: "center"}}>
-        <div className="fan-speed-control">
+        <VerticalLayout id="fan-speed-control">
             <IncreaseSpeed onClick={() => handleSpeedChange(1)} />
             {<FanBoostButton boostActive={boostActive} toggleBoost={toggleBoost} fanGroupRef={useRotation(boostActive)}/>}
             <FanDisplay speed={speed} />
             <DecreaseSpeed onClick={() => handleSpeedChange(-1)} />
-        </div>
         </VerticalLayout>
     );
 }

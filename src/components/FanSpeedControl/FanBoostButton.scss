@@ -1,13 +1,3 @@
-.fan-button {
-    all: unset; /* Remove default button styles */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    width: 50px; /* Match the rect width */
-    height: 25px; /* Match the rect height */
-}
-
 .fan-container {
     display: flex;
     justify-content: center;
