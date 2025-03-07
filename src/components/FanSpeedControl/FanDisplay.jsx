@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import "./FanDisplay.css";
+import "./FanDisplay.scss";
 
 export default function FanDisplay({ speed }) {
     return <span className="speed-number">{speed}</span>;
