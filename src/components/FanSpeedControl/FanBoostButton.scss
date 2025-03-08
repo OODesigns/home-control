@@ -1,10 +1,9 @@
 .fan-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%; /* Full width of parent */
-    height: auto; /* Maintain aspect ratio */
+    width: 14vmin;
+    height: 14vmin;
     cursor: pointer;
+    display: block;
+    margin: 0;
 }
 
 .boost-text {

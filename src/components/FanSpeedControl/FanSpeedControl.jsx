@@ -44,8 +44,3 @@ FanSpeedControl.propTypes = {
     initialSpeed: PropTypes.number,
     initialBoost: PropTypes.bool,
 };
-
-FanSpeedControl.defaultProps = {
-    initialSpeed: 2,
-    initialBoost: false,
-};
