@@ -1,22 +1,15 @@
-.fan-button {
+#fan-button {
     // Base styles for the fan button
-    width: 8vmin;
-    height: 8vmin;
-    background: none;
-    border: none;
-    padding: 0;
-    display: block;
-    cursor: pointer;
     margin-bottom: 3vmin;
     margin-top: 2vmin;
 
     &:hover {
-        .fan-button-arrow {
+        #fan-button-arrow {
             stroke: lightblue; /* Hover effect */
         }
     }
 
-    .fan-button-arrow {
+    #fan-button-arrow {
         // Base styles for the arrow, if any
         transition: stroke 0.3s ease; /* Smooth transition for hover effect */
     }

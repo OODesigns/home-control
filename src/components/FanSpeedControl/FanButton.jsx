@@ -1,19 +1,27 @@
 // FanButton.jsx
 import PropTypes from "prop-types";
 import "./FanButton.scss";
+import SmallSvgButton from "../SmallSvgButton/SmallSvgButton.jsx";
 
 export default function FanButton({ ariaLabel, onClick, path }) {
     return (
-        <button onClick={onClick} aria-label={ariaLabel} className="fan-button">
-            <svg
-                viewBox="0 0 32 32"
-                xmlns="http://www.w3.org/2000/svg"
-                style={{ display: "block", height: "8vmin", width: "8vmin", margin: "auto" }}
-                preserveAspectRatio="xMidYMid meet"
-            >
-                <path className="fan-button-arrow" d={path} fill="none" stroke="white" strokeWidth="2" />
-            </svg>
-        </button>
+       <SmallSvgButton
+           id="fan-button"
+           onClick={onClick}
+           ariaLabel={ariaLabel}
+           path={path}
+           pathId="fan-button-arrow"/>
+
+        // <button onClick={onClick} aria-label={ariaLabel} className="fan-button">
+        //     <svg
+        //         viewBox="0 0 32 32"
+        //         xmlns="http://www.w3.org/2000/svg"
+        //         style={{ display: "block", height: "8vmin", width: "8vmin", margin: "auto" }}
+        //         preserveAspectRatio="xMidYMid meet"
+        //     >
+        //         <path className="fan-button-arrow" d={path} fill="none" stroke="white" strokeWidth="2" />
+        //     </svg>
+        // </button>
     );
 }
 
