@@ -11,7 +11,7 @@ export default function FanButton({ ariaLabel, onClick, path }) {
                 style={{ display: "block", height: "8vmin", width: "8vmin", margin: "auto" }}
                 preserveAspectRatio="xMidYMid meet"
             >
-                <path d={path} fill="none" stroke="white" strokeWidth="2" />
+                <path className="fan-button-arrow" d={path} fill="none" stroke="white" strokeWidth="2" />
             </svg>
         </button>
     );

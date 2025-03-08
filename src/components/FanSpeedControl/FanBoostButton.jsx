@@ -7,7 +7,7 @@ const FanBoostButton = ({ boostActive, toggleBoost, fanGroupRef }) => {
         <button
             ref={fanGroupRef}
             onClick={toggleBoost}
-            className={`fan-container ${boostActive ? 'rotate' : ''}`}
+            className="fan-container"
             aria-label="Toggle Boost"
             style={{ background: 'none', border: 'none', padding: 0 }}
         >
@@ -31,7 +31,7 @@ const FanBoostButton = ({ boostActive, toggleBoost, fanGroupRef }) => {
                         stroke="none"
                         strokeWidth="1"
                     />
-                    <text className="boost-text">
+                    <text className={`boost-text ${boostActive ? 'rotate' : ''}`}>
                         <textPath href="#boostCircle" startOffset="0%">
                             BOOST • BOOST • BOOST • BOOST •
                         </textPath>
