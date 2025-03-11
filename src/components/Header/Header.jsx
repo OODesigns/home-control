@@ -1,15 +1,28 @@
-import "./Header.css";
+import "./Header.scss";
 import PropTypes from "prop-types";
+import HorizontalLayout from "../HorizontalContainer/HorizontalContainer.jsx";
+import NavigationControl from "../NavigationControl/NavigationControl.jsx";
+import PowerControl from "../PowerControl/PowerControl.jsx";
 
-export default function Header({caption}){
+const Header = ({caption, onLeftNavigationClick, onRightNavigationClick, onPowerSelectClick}) => {
     return (
-        <header className="header-container">
+        <HorizontalLayout className="header-container">
+            <NavigationControl
+                onLeftNavigationClick={onLeftNavigationClick}
+                onRightNavigationClick={onRightNavigationClick}
+             />
             <span className="header-caption">{caption}</span>
-        </header>
+            <PowerControl status="" onClick={onPowerSelectClick} />
+        </HorizontalLayout>
     );
 };
 
+export default Header;
+
 Header.propTypes = {
     caption: PropTypes.string.isRequired,
+    onLeftNavigationClick: PropTypes.func,
+    onRightNavigationClick: PropTypes.func,
+    onPowerSelectClick: PropTypes.func
 };
 
