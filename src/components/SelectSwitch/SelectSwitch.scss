@@ -1,0 +1,18 @@
+.svg-container {
+  width: 30vmin;   // 30% of the viewport's smaller dimension
+  height: 30vmin;  // maintain a square container
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    width: 100%;
+    height: auto; // maintains aspect ratio
+  }
+
+  text {
+    fill: white;
+    font-weight: 500;
+    font-family: "Sans", sans-serif;
+  }
+}

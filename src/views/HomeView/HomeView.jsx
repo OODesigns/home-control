@@ -1,7 +1,8 @@
 import NavigationalContainer from '../../components/NavigationalContainer/NavigationalContainer';
 import FanSpeedControl from '../../components/FanSpeedControl/FanSpeedControl';
 import HorizontalContainer from "../../components/HorizontalContainer/HorizontalContainer.jsx";
-import './HomeView.scss'; // Import the SCSS file
+import './HomeView.scss';
+import SelectSwitch from "../../components/SelectSwitch/SelectSwitch"; // Import the SCSS file
 
 export default function HomeView() {
     const handleSpeedChange = (newSpeed) => {
@@ -12,11 +13,14 @@ export default function HomeView() {
         console.log(`Boost is now: ${boostActive ? 'Active' : 'Inactive'}`);
     };
 
+    const handleSelectSwitch = (region) => {}
+
     return (
         <NavigationalContainer caption="Home">
             <div className="home-view">
                 {/* Left Fixed 25% */}
                 <HorizontalContainer className="home-view__left">
+                    <SelectSwitch onRegionChange={handleSelectSwitch}/>
                 </HorizontalContainer>
                 {/* Middle Flexible and Centered */}
                 <HorizontalContainer className="home-view__middle">
