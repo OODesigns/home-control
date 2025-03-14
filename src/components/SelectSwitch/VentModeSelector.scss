@@ -4,15 +4,4 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-  svg {
-    width: 100%;
-    height: auto; // maintains aspect ratio
-  }
-
-  text {
-    fill: white;
-    font-weight: 500;
-    font-family: "Sans", sans-serif;
-  }
 }
