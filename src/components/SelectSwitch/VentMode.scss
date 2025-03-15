@@ -1,10 +1,27 @@
-svg {
-  width: 100%;
-  height: auto; // maintains aspect ratio
+.vent-mode {
+  cursor: pointer;
+
+  svg {
+    width: 100%;
+    height: auto; // maintains aspect ratio
+  }
+
+  text {
+    fill: white;
+    font-weight: 500;
+    font-family: "Sans", sans-serif;
+  }
+
+  .vent-mode-path {
+    stroke: white;
+    transition: all 0.3s ease;
+  }
+
+  .vent-mode-text{
+    font-size: 50.8px;
+    fill: white;
+    font-weight: 500;
+   }
 }
 
-text {
-  fill: white;
-  font-weight: 500;
-  font-family: "Sans", sans-serif;
-}
+

@@ -26,16 +26,16 @@ const VentModeSelector = ({ onRegionChange }) => {
                 xmlnsXlink="http://www.w3.org/1999/xlink"
              >
                 <AutoMode
-                    isActive={activeMode === 'auto'}
-                    onActivate={OnActivateMode}
+                    isSelected={activeMode === 'auto'}
+                    onSelect={OnActivateMode}
                 />
                 <PurgeMode
-                    isActive={activeMode === 'purge'}
-                    onActivate={OnActivateMode}
+                    isSelected={activeMode === 'purge'}
+                    onSelect={OnActivateMode}
                 />
                 <MVHRMode
-                    isActive={activeMode === 'MVHR'}
-                    onActivate={OnActivateMode}
+                    isSelected={activeMode === 'MVHR'}
+                    onSelect={OnActivateMode}
                 />
             </svg>
         </div>
