@@ -15,6 +15,13 @@
   .vent-mode-path {
     stroke: white;
     transition: all 0.3s ease;
+    stroke-width: 2;
+    fill: transparent;
+
+    &.selected {
+      fill: #1E3A61;
+      stroke-width: 3;
+    }
   }
 
   .vent-mode-text {
@@ -24,15 +31,9 @@
     transition: fill 0.3s ease; // Add transition for smooth hover effect
   }
 
-  &:hover {
-  //  .vent-mode-path {
-  //    fill: rgba(128, 128, 128, 0.2);
-  //    stroke: lightblue;
-  //    stroke-width: 1.5px;
-  //  }
-
-    .vent-mode-text {
-      fill: lightblue; // Change the fill color on hover
+  &:hover{
+    .vent-mode-path:not(.selected){
+      fill: #c268f8;
     }
   }
 }

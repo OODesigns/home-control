@@ -2,9 +2,12 @@ import NavigationalContainer from '../../components/NavigationalContainer/Naviga
 import FanSpeedControl from '../../components/FanSpeedControl/FanSpeedControl';
 import HorizontalContainer from "../../components/HorizontalContainer/HorizontalContainer.jsx";
 import './HomeView.scss';
-import VentModeSelector from "../../components/SelectSwitch/VentModeSelector"; // Import the SCSS file
+import VentModeSelector from "../../components/SelectSwitch/VentModeSelector";
+import {useState} from "react"; // Import the SCSS file
 
 export default function HomeView() {
+    const [selectedMode, setSelectedMode] = useState("auto");
+
     const handleSpeedChange = (newSpeed) => {
         console.log(`Speed changed to: ${newSpeed}`);
     };
@@ -13,14 +16,16 @@ export default function HomeView() {
         console.log(`Boost is now: ${boostActive ? 'Active' : 'Inactive'}`);
     };
 
-    const handleSelectSwitch = (region) => {}
+    const handleOnSelect = (selectedMode) => {
+        setSelectedMode(selectedMode);
+    }
 
     return (
         <NavigationalContainer caption="Home">
             <div className="home-view">
                 {/* Left Fixed 25% */}
                 <HorizontalContainer className="home-view__left">
-                    <VentModeSelector onRegionChange={handleSelectSwitch}/>
+                    <VentModeSelector selectedMode={selectedMode} onSelect={handleOnSelect}/>
                 </HorizontalContainer>
                 {/* Middle Flexible and Centered */}
                 <HorizontalContainer className="home-view__middle">

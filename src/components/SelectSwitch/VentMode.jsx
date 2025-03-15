@@ -4,22 +4,19 @@ import "./VentMode.scss"
 
 const VentMode = ({path, textPath,  text, dominantBaseline, isSelected, onSelect,
                       }) => {
+
     const handleClick = () => {
-        onSelect(text);
+        onSelect(text.toLowerCase());
     };
 
     // Create a unique textPathId based on the text prop
     const textPathId = `vent-mode-text-id-${text.toLowerCase()}`;
 
     return (
-        <g className="vent-mode">
+        <g className="vent-mode" role="button"  onClick={handleClick}>
             <path
-                className="vent-mode-path"
+                className={`vent-mode-path ${isSelected ? 'selected' : ''}`}
                 d={path}
-                style={{
-                    fill: isSelected ? '#1E3A61' : 'transparent',
-                    strokeWidth: isSelected ? 3 : 2,
-                }}
             />
             <path id={textPathId} style={{ fill: 'none'}} d={textPath} />
             <text className="vent-mode-text">

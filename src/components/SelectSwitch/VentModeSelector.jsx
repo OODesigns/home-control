@@ -1,18 +1,15 @@
-import React, { useState } from 'react';
 import './VentModeSelector.scss'
 import AutoMode from "./AutoMode";
 import PurgeMode from "./PurgeMode";
 import MVHRMode from "./MVHRMode";
+import PropTypes from "prop-types";
 
-const VentModeSelector = ({ onRegionChange }) => {
-    const [activeMode, setActiveMode] = useState("auto");
+const VentModeSelector = ({ selectedMode, onSelect }) => {
 
-    const OnActivateMode = (regionId) => {
-        setActiveMode(regionId);
-        if (onRegionChange) {
-            onRegionChange(regionId);
+    const HandleOnSelect = (selectedMode) => {
+        if (onSelect) {
+            onSelect(selectedMode);
         }
-        console.log('Activated region:', regionId);
     };
 
     return (
@@ -21,25 +18,30 @@ const VentModeSelector = ({ onRegionChange }) => {
                 width="300mm"
                 height="300mm"
                 viewBox="0 0 300 300"
-                id="svg1"
                 xmlns="http://www.w3.org/2000/svg"
                 xmlnsXlink="http://www.w3.org/1999/xlink"
              >
+                <MVHRMode
+                    isSelected={selectedMode === "mvhr"}
+                    onSelect={HandleOnSelect}
+                />
                 <AutoMode
-                    isSelected={activeMode === 'auto'}
-                    onSelect={OnActivateMode}
+                    isSelected={selectedMode === 'auto'}
+                    onSelect={HandleOnSelect}
                 />
                 <PurgeMode
-                    isSelected={activeMode === 'purge'}
-                    onSelect={OnActivateMode}
+                    isSelected={selectedMode === 'purge'}
+                    onSelect={HandleOnSelect}
                 />
-                <MVHRMode
-                    isSelected={activeMode === 'MVHR'}
-                    onSelect={OnActivateMode}
-                />
+
             </svg>
         </div>
     );
 };
+
+VentModeSelector.propTypes = {
+    onSelect: PropTypes.func,
+    selectedMode: PropTypes.string,
+}
 
 export default VentModeSelector;
