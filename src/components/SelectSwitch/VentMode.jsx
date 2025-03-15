@@ -1,13 +1,8 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./VentMode.scss"
 
-const VentMode = ({
-                          pathD,
-                          textPathD,
-                          text,
-                          dominantBaseline,
-                          isSelected,
-                          onSelect,
+const VentMode = ({path, textPath,  text, dominantBaseline, isSelected, onSelect,
                       }) => {
     const handleClick = () => {
         onSelect(text);
@@ -20,13 +15,13 @@ const VentMode = ({
         <g className="vent-mode">
             <path
                 className="vent-mode-path"
-                d={pathD}
+                d={path}
                 style={{
                     fill: isSelected ? '#1E3A61' : 'transparent',
                     strokeWidth: isSelected ? 3 : 2,
                 }}
             />
-            <path id={textPathId} style={{ fill: 'none'}} d={textPathD} />
+            <path id={textPathId} style={{ fill: 'none'}} d={textPath} />
             <text className="vent-mode-text">
                 <textPath
                     xlinkHref={`#${textPathId}`}
@@ -41,4 +36,14 @@ const VentMode = ({
     );
 };
 
+VentMode.propTypes = {
+    path: PropTypes.string.isRequired,
+    textPath: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired,
+    dominantBaseline: PropTypes.string,
+    isSelected: PropTypes.bool.isRequired,
+    onSelect: PropTypes.func.isRequired,
+}
+
 export default VentMode;
+

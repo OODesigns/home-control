@@ -17,11 +17,22 @@
     transition: all 0.3s ease;
   }
 
-  .vent-mode-text{
+  .vent-mode-text {
     font-size: 50.8px;
     fill: white;
     font-weight: 500;
-   }
+    transition: fill 0.3s ease; // Add transition for smooth hover effect
+  }
+
+  &:hover {
+  //  .vent-mode-path {
+  //    fill: rgba(128, 128, 128, 0.2);
+  //    stroke: lightblue;
+  //    stroke-width: 1.5px;
+  //  }
+
+    .vent-mode-text {
+      fill: lightblue; // Change the fill color on hover
+    }
+  }
 }
-
-
