@@ -1,0 +1,20 @@
+$step-size: 2vmin;
+$selected-step-color: #FF4500;
+$unselected-step-border: 2px solid #1E9102;
+
+.step {
+  position: absolute;
+  width: $step-size;
+  height: $step-size;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  border: $unselected-step-border;
+  transition: background 0.2s ease;
+  transform: translate(-50%, -50%);
+
+  &.active {
+    background: $selected-step-color;
+    border: 2px solid $selected-step-color;
+  }
+}

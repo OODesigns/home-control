@@ -3,7 +3,8 @@ import FanSpeedControl from '../../components/FanSpeedControl/FanSpeedControl';
 import HorizontalContainer from "../../components/HorizontalContainer/HorizontalContainer.jsx";
 import './HomeView.scss';
 import VentModeSelector from "../../components/SelectSwitch/VentModeSelector";
-import {useState} from "react"; // Import the SCSS file
+import {useState} from "react";
+import TemperatureDial from "../../components/TemperatureDial/TemperatureDial"; // Import the SCSS file
 
 export default function HomeView() {
     const [selectedMode, setSelectedMode] = useState("auto");
@@ -29,6 +30,7 @@ export default function HomeView() {
                 </HorizontalContainer>
                 {/* Middle Flexible and Centered */}
                 <HorizontalContainer className="home-view__middle">
+                    <TemperatureDial />
                 </HorizontalContainer>
                 {/* Right Fixed 25% */}
                 <HorizontalContainer className="home-view__right">
