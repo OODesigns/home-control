@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./TemperatureValue.scss"
 
 const TemperatureValue = ({text, position, fontSize}) => (
     <div className="temperature-value" style={{top: position, fontSize:`${fontSize}vmin`}}>

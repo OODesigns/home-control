@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import './Step.scss'
 
 const Step = ({ angle, isActive, onClick }) => {
     const SIZE_VMIN = 70;

@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 import HorizontalContainer from "../HorizontalContainer/HorizontalContainer.jsx";
 import SmallSvgButton from "../SmallSvgButton/SmallSvgButton.jsx";
-import "./NavigationalControl.scss"
 
 const NavigationControl = ({onLeftNavigationClick, onRightNavigationClick}) => {
     return (

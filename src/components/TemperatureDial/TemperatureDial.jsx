@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./TemperatureDial.scss";
 import TemperatureValue from "./TemperatureValue";
 import StepsContainer from "./StepContainer";
 

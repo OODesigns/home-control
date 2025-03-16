@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-import "./SmallSvgButton.scss";
 import * as propTypes from "prop-types";
 
 export default function SmallSvgButton({ pathId, ariaLabel, onClick, path, ...props}) {

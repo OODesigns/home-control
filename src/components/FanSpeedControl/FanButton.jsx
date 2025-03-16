@@ -1,6 +1,4 @@
-// FanButton.jsx
 import PropTypes from "prop-types";
-import "./FanButton.scss";
 import SmallSvgButton from "../SmallSvgButton/SmallSvgButton.jsx";
 
 export default function FanButton({ ariaLabel, onClick, path }) {

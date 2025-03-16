@@ -1,4 +1,3 @@
-import './VentModeSelector.scss'
 import AutoMode from "./AutoMode";
 import PurgeMode from "./PurgeMode";
 import MVHRMode from "./MVHRMode";

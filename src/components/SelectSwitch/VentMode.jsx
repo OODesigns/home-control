@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./VentMode.scss"
 
 const VentMode = ({path, textPath,  text, dominantBaseline, isSelected, onSelect,
                       }) => {

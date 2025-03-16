@@ -1,4 +1,3 @@
-import "./HorizontalContainer.scss";
 import PropTypes from "prop-types";
 
 const HorizontalLayout = ({ children, ...props }) => {

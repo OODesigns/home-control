@@ -1,3 +1,5 @@
+@import "app-styles";
+
 /*
   :root is used to define global styles and CSS variables that apply to the entire document.
   These styles will cascade to all elements, including those outside the React app.
@@ -40,7 +42,4 @@ html, body {
 .button {
   all: unset; /* Remove default button styles */
 }
-
-
-
 

@@ -1,5 +1,4 @@
 import PropTypes from "prop-types"; // Import styles
-import "./VerticalContainer.scss"; // Import styles
 
 const VerticalLayout = ({ children, ...props }) => {
     return (

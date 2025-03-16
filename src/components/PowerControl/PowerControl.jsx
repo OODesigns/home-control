@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-import "./PowerControl.scss"
 
 const PowerControl = ({status, onClick}) => {
     // Inline style to control the button's dimensions based on the 'size' prop.

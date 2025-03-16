@@ -1,4 +1,3 @@
-import "./Header.scss";
 import PropTypes from "prop-types";
 import HorizontalLayout from "../HorizontalContainer/HorizontalContainer.jsx";
 import NavigationControl from "../NavigationControl/NavigationControl.jsx";

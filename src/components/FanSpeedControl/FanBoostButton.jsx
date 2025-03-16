@@ -1,6 +1,5 @@
-
 import PropTypes from 'prop-types';
-import './FanBoostButton.scss'; // Import your styles here
+
 
 const FanBoostButton = ({ boostActive, toggleBoost, fanGroupRef }) => {
     return (

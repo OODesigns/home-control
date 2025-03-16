@@ -5,7 +5,6 @@ import DecreaseSpeed from "./DecreaseSpeed.jsx";
 import FanDisplay from "./FanDisplay.jsx";
 import FanBoostButton from "./FanBoostButton.jsx";
 import useRotation from "./useRotation.js";
-import "./FanSpeedControl.scss";
 import VerticalLayout from "../VerticalContainer/VerticalContainer.jsx";
 
 export default function FanSpeedControl({ onSpeedChange, onBoostChange, initialSpeed = 2, initialBoost = false }) {
