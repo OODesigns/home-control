@@ -3,6 +3,7 @@ import AutoMode from "./AutoMode";
 import PurgeMode from "./PurgeMode";
 import MVHRMode from "./MVHRMode";
 import PropTypes from "prop-types";
+import ExchangeStatus from "./ExchangeStatus";
 
 const VentModeSelector = ({ selectedMode, onSelect }) => {
 
@@ -33,7 +34,9 @@ const VentModeSelector = ({ selectedMode, onSelect }) => {
                     isSelected={selectedMode === 'purge'}
                     onSelect={HandleOnSelect}
                 />
-
+                <g transform="translate(100,100)">
+                    <ExchangeStatus />
+                </g>
             </svg>
         </div>
     );
