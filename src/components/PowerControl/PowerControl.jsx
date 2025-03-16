@@ -1,11 +1,8 @@
 import PropTypes from "prop-types";
 
 const PowerControl = ({status, onClick}) => {
-    // Inline style to control the button's dimensions based on the 'size' prop.
-
     return (
         <button
-            type="button"
             className="power-control"
             // className={`svg-button ${status} ${className}`.trim()}
             onClick={onClick}

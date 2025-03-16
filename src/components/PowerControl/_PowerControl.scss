@@ -1,9 +1,11 @@
 .power-control{
-  width: 8vmin;
-  height: 8vmin;
+  width: 6vmin;
+  height: 6vmin;
   background: none;
   border: none;
   padding: 0;
-  display: block;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
