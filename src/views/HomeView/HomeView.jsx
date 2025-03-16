@@ -24,7 +24,6 @@ export default function HomeView() {
     return (
         <NavigationalContainer caption="Home">
             <div className="home-view">
-                {/* Left Fixed 25% */}
                 <HorizontalContainer className="home-view__left">
                     <VentModeSelector selectedMode={selectedMode} onSelect={handleOnSelect}/>
                 </HorizontalContainer>
@@ -32,7 +31,6 @@ export default function HomeView() {
                 <HorizontalContainer className="home-view__middle">
                     <TemperatureDial />
                 </HorizontalContainer>
-                {/* Right Fixed 25% */}
                 <HorizontalContainer className="home-view__right">
                     <FanSpeedControl
                         onSpeedChange={handleSpeedChange}

@@ -13,10 +13,8 @@ const VentModeSelector = ({ selectedMode, onSelect }) => {
     };
 
     return (
-        <div className="svg-container">
+        <div className="VentModeSelector">
             <svg
-                width="300mm"
-                height="300mm"
                 viewBox="0 0 300 300"
                 xmlns="http://www.w3.org/2000/svg"
                 xmlnsXlink="http://www.w3.org/1999/xlink"
