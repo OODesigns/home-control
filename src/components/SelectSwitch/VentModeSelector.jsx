@@ -3,6 +3,8 @@ import PurgeMode from "./PurgeMode";
 import MVHRMode from "./MVHRMode";
 import PropTypes from "prop-types";
 import ExchangeStatus from "./ExchangeStatus";
+import CoolingStatus from "./CoolingStatus";
+import PurgeStatus from "./PurgeStatus";
 
 const VentModeSelector = ({ selectedMode, onSelect }) => {
 
@@ -32,7 +34,7 @@ const VentModeSelector = ({ selectedMode, onSelect }) => {
                     onSelect={HandleOnSelect}
                 />
                 <g transform="translate(100,100)">
-                    <ExchangeStatus />
+                    <PurgeStatus />
                 </g>
             </svg>
         </div>
