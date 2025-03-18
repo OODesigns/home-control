@@ -1,0 +1,40 @@
+@keyframes fadeAnimation {
+  0% { opacity: 0; }
+  33% { opacity: 1; } // Fade in complete at 5s (33% of 15s)
+  66% { opacity: 1; } // Stay visible until 10s
+  100% { opacity: 0; } // Fade out complete at 15s
+}
+
+.containerWrapper {
+  position: relative;
+  transition: all 0.5s ease;
+  min-height: 60vmin;
+  width: 25vmin;
+
+  &:empty {
+    min-height: 0;
+    width: 0;
+  }
+
+  @media (max-width: 768px) {
+    min-height: 65vmin;
+    width: 30vmin;
+  }
+}
+
+.fadeContainer {
+  position: absolute;
+  width: 25vmin;
+  height: 60vmin;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  background: transparent;
+  animation: fadeAnimation 15s infinite;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  pointer-events: none;
+
+  @media (max-width: 768px) {
+    width: 30vmin;
+    height: 65vmin;
+  }
+}

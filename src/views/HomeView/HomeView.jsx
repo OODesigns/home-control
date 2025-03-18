@@ -1,10 +1,10 @@
 import NavigationalContainer from '../../components/NavigationalContainer/NavigationalContainer';
 import FanSpeedControl from '../../components/FanSpeedControl/FanSpeedControl';
 import HorizontalContainer from "../../components/HorizontalContainer/HorizontalContainer.jsx";
-import './HomeView.scss';
 import VentModeSelector from "../../components/SelectSwitch/VentModeSelector";
 import {useState} from "react";
-import TemperatureDial from "../../components/TemperatureDial/TemperatureDial"; // Import the SCSS file
+import TemperatureDial from "../../components/TemperatureDial/TemperatureDial";
+import FadingContainer from "../../components/FadingContainer/FadingContainer";
 
 export default function HomeView() {
     const [selectedMode, setSelectedMode] = useState("auto");
@@ -31,6 +31,9 @@ export default function HomeView() {
                         onSelect={handleOnSelect}
                         status={status}
                     />
+                    <FadingContainer>
+
+                    </FadingContainer>
                 </HorizontalContainer>
                 {/* Middle Flexible and Centered */}
                 <HorizontalContainer className="home-view__middle">
