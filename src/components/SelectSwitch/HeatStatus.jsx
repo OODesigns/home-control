@@ -1,4 +1,4 @@
-const HeatStatus = () => (
+const HeatingStatus = () => (
     <svg
         width="100"
         height="100"
@@ -40,4 +40,4 @@ const HeatStatus = () => (
     </svg>
 );
 
-export default HeatStatus;
+export default HeatingStatus;

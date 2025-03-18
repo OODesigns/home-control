@@ -2,11 +2,9 @@ import AutoMode from "./AutoMode";
 import PurgeMode from "./PurgeMode";
 import MVHRMode from "./MVHRMode";
 import PropTypes from "prop-types";
-import ExchangeStatus from "./ExchangeStatus";
-import CoolingStatus from "./CoolingStatus";
-import PurgeStatus from "./PurgeStatus";
+import StatusIndicator from "./StatusIndicator";
 
-const VentModeSelector = ({ selectedMode, onSelect }) => {
+const VentModeSelector = ({ status, selectedMode, onSelect }) => {
 
     const HandleOnSelect = (selectedMode) => {
         if (onSelect) {
@@ -33,9 +31,7 @@ const VentModeSelector = ({ selectedMode, onSelect }) => {
                     isSelected={selectedMode === 'purge'}
                     onSelect={HandleOnSelect}
                 />
-                <g transform="translate(100,100)">
-                    <PurgeStatus />
-                </g>
+                <StatusIndicator status={status} />
             </svg>
         </div>
     );
@@ -44,6 +40,9 @@ const VentModeSelector = ({ selectedMode, onSelect }) => {
 VentModeSelector.propTypes = {
     onSelect: PropTypes.func,
     selectedMode: PropTypes.string,
+    status: PropTypes.oneOf(['purging', 'exchanging', 'cooling', 'heating']).isRequired
 }
 
 export default VentModeSelector;
+
+

@@ -1,4 +1,4 @@
-const PurgeStatus = () => (
+const PurgingStatus = () => (
     <svg
         width="100"
         height="100"
@@ -16,8 +16,8 @@ const PurgeStatus = () => (
                 y2="37.384"
             >
                 <stop offset="34.8%" stopColor="#1e90ff" />
-                <stop offset="72.2%" stopColor="#0f487f" />
-                <stop offset="100%" stopColor="#1e3a61" stopOpacity="0.99" />
+                <stop offset="72.2%" stopColor="white" />
+                <stop offset="100%" stopColor="white" stopOpacity="0.99" />
             </linearGradient>
         </defs>
 
@@ -30,4 +30,4 @@ const PurgeStatus = () => (
     </svg>
 );
 
-export default PurgeStatus;
+export default PurgingStatus;

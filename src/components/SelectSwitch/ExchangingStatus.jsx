@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ExchangeStatus = () => (
+const ExchangingStatus = () => (
     <svg
         fill="#000000"
         height="100"
@@ -78,4 +78,4 @@ const ExchangeStatus = () => (
     </svg>
 );
 
-export default ExchangeStatus;
+export default ExchangingStatus;

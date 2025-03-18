@@ -8,6 +8,7 @@ import TemperatureDial from "../../components/TemperatureDial/TemperatureDial"; 
 
 export default function HomeView() {
     const [selectedMode, setSelectedMode] = useState("auto");
+    const [status] = useState("exchanging");
 
     const handleSpeedChange = (newSpeed) => {
         console.log(`Speed changed to: ${newSpeed}`);
@@ -25,7 +26,11 @@ export default function HomeView() {
         <NavigationalContainer caption="Home">
             <div className="home-view">
                 <HorizontalContainer className="home-view__left">
-                    <VentModeSelector selectedMode={selectedMode} onSelect={handleOnSelect}/>
+                    <VentModeSelector
+                        selectedMode={selectedMode}
+                        onSelect={handleOnSelect}
+                        status={status}
+                    />
                 </HorizontalContainer>
                 {/* Middle Flexible and Centered */}
                 <HorizontalContainer className="home-view__middle">
