@@ -4,11 +4,15 @@ import HorizontalContainer from "../../components/HorizontalContainer/Horizontal
 import VentModeSelector from "../../components/SelectSwitch/VentModeSelector";
 import {useState} from "react";
 import TemperatureDial from "../../components/TemperatureDial/TemperatureDial";
+import Rectangle from "../../components/Rectangle/Rectangle";
+import VerticalContainer from "../../components/VerticalContainer/VerticalContainer";
 import FadingContainer from "../../components/FadingContainer/FadingContainer";
+
 
 export default function HomeView() {
     const [selectedMode, setSelectedMode] = useState("auto");
     const [status] = useState("exchanging");
+    const [triggeredBySensor, setTriggeredBySensor ] = useState(false);
 
     const handleSpeedChange = (newSpeed) => {
         console.log(`Speed changed to: ${newSpeed}`);
@@ -16,6 +20,7 @@ export default function HomeView() {
 
     const handleBoostChange = (boostActive) => {
         console.log(`Boost is now: ${boostActive ? 'Active' : 'Inactive'}`);
+        setTriggeredBySensor(boostActive)
     };
 
     const handleOnSelect = (selectedMode) => {
@@ -26,14 +31,16 @@ export default function HomeView() {
         <NavigationalContainer caption="Home">
             <div className="home-view">
                 <HorizontalContainer className="home-view__left">
+                   <VerticalContainer>
                     <VentModeSelector
                         selectedMode={selectedMode}
                         onSelect={handleOnSelect}
                         status={status}
                     />
-                    <FadingContainer>
-
+                    <FadingContainer show={triggeredBySensor}>
+                      <Rectangle />
                     </FadingContainer>
+                   </VerticalContainer>
                 </HorizontalContainer>
                 {/* Middle Flexible and Centered */}
                 <HorizontalContainer className="home-view__middle">

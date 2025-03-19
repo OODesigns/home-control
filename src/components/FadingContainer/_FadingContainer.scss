@@ -1,40 +1,30 @@
-@keyframes fadeAnimation {
-  0% { opacity: 0; }
-  33% { opacity: 1; } // Fade in complete at 5s (33% of 15s)
-  66% { opacity: 1; } // Stay visible until 10s
-  100% { opacity: 0; } // Fade out complete at 15s
+.fading-container {
+  /*
+    Smoothly transition both max-height and opacity over 0.4s.
+    Using 'overflow: hidden' ensures that the container is truly collapsed
+    and doesn't show a scroll bar as it shrinks.
+  */
+  overflow: hidden;
+  transition: max-height 3s ease, opacity 3s ease;
+
+  /* Starting at zero so it's effectively invisible and takes no space */
+  max-height: 0;
+  opacity: 0;
 }
 
-.containerWrapper {
-  position: relative;
-  transition: all 0.5s ease;
-  min-height: 60vmin;
-  width: 25vmin;
-
-  &:empty {
-    min-height: 0;
-    width: 0;
-  }
-
-  @media (max-width: 768px) {
-    min-height: 65vmin;
-    width: 30vmin;
-  }
+/* When 'show' is true => .open makes it fully visible with enough max-height */
+.fading-container.open {
+  /*
+    Make 'max-height' large enough to cover the typical height for your content.
+    If your content can be very tall, use a bigger value or consider a different approach
+    (e.g., measuring content height dynamically).
+  */
+  max-height: 1000px;
+  opacity: 1;
 }
 
-.fadeContainer {
-  position: absolute;
-  width: 25vmin;
-  height: 60vmin;
-  border: 2px solid rgba(255, 255, 255, 0.8);
-  background: transparent;
-  animation: fadeAnimation 15s infinite;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-  border-radius: 8px;
-  pointer-events: none;
-
-  @media (max-width: 768px) {
-    width: 30vmin;
-    height: 65vmin;
-  }
+/* When 'show' is false => .closed (the default), it fades out and collapses to height 0 */
+.fading-container.closed {
+  max-height: 0;
+  opacity: 0;
 }
