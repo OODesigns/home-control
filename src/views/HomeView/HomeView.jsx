@@ -4,9 +4,9 @@ import HorizontalContainer from "../../components/HorizontalContainer/Horizontal
 import VentModeSelector from "../../components/SelectSwitch/VentModeSelector";
 import {useState} from "react";
 import TemperatureDial from "../../components/TemperatureDial/TemperatureDial";
-import Rectangle from "../../components/Rectangle/Rectangle";
 import VerticalContainer from "../../components/VerticalContainer/VerticalContainer";
 import FadingContainer from "../../components/FadingContainer/FadingContainer";
+import ShowerIcon from "../../components/Icons/ShowerIcon";
 
 
 export default function HomeView() {
@@ -38,7 +38,7 @@ export default function HomeView() {
                         status={status}
                     />
                     <FadingContainer show={triggeredBySensor}>
-                      <Rectangle />
+                       <ShowerIcon/>
                     </FadingContainer>
                    </VerticalContainer>
                 </HorizontalContainer>
