@@ -7,6 +7,7 @@ import TemperatureDial from "../../components/TemperatureDial/TemperatureDial";
 import VerticalContainer from "../../components/VerticalContainer/VerticalContainer";
 import FadingContainer from "../../components/FadingContainer/FadingContainer";
 import ShowerIcon from "../../components/Icons/ShowerIcon";
+import BathIcon from "../../components/Icons/BathIcon";
 
 
 export default function HomeView() {
@@ -39,6 +40,7 @@ export default function HomeView() {
                     />
                     <FadingContainer show={triggeredBySensor}>
                        <ShowerIcon/>
+                       <BathIcon/>
                     </FadingContainer>
                    </VerticalContainer>
                 </HorizontalContainer>
