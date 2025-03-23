@@ -8,6 +8,8 @@ import VerticalContainer from "../../components/VerticalContainer/VerticalContai
 import FadingContainer from "../../components/FadingContainer/FadingContainer";
 import ShowerIcon from "../../components/Icons/ShowerIcon";
 import BathIcon from "../../components/Icons/BathIcon";
+import StairsIcon from "../../components/Icons/StairsIcon";
+import KitchenIcon from "../../components/Icons/KitchenIcon";
 
 
 export default function HomeView() {
@@ -41,6 +43,8 @@ export default function HomeView() {
                     <FadingContainer show={triggeredBySensor}>
                        <ShowerIcon/>
                        <BathIcon/>
+                       <StairsIcon/>
+                       <KitchenIcon/>
                     </FadingContainer>
                    </VerticalContainer>
                 </HorizontalContainer>
