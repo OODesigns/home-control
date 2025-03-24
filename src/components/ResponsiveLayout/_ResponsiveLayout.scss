@@ -1,20 +1,28 @@
+// Container for responsive grid layout
 .ResponsiveLayout {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-auto-rows: 1fr;
-  gap: var(--gap, 1rem);
-  width: 100%;
+  display: grid;                    // Use CSS Grid layout
+  grid-template-columns: repeat(2, 1fr); // Create 2 equal-width columns
+  grid-auto-rows: 1fr;             // All rows have equal height
+  gap: var(--gap, 1rem);           // Space between items (default: 1rem)
+  width: 100%;                     // Full container width
+  margin-top: 2vmin;               // Top margin relative to viewport size
 }
-.ResponsiveItem {
-  min-width: var(--min-column-width, 200px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
+// Individual items within the grid
+.ResponsiveItem {
+  min-width: var(--min-column-width, 12vmin); // Minimum column width (viewport-based)
+  display: flex;                    // Use flexbox for content alignment
+  justify-content: center;          // Horizontal centering
+  align-items: center;              // Vertical centering
+
+  // Special case for odd-numbered items
   &.oddItem {
-    grid-column: 1 / -1;
-    justify-content: center;
-    margin: 0 auto;
-    max-width: calc(var(--min-column-width, 200px) * 2 + var(--gap, 1rem));
+    grid-column: 1 / -1;           // Span all columns
+    justify-content: center;       // Reinforce horizontal centering
+    margin: 0 auto;                // Horizontal centering fallback
+    max-width: calc(
+            var(--min-column-width, 12vmin) * 2 + // Max width = 2 columns + gap
+            var(--gap, 1rem)
+    );
   }
 }
