@@ -5,8 +5,6 @@ const BathIcon = () => {
     return (
         <div className="icon">
         <svg
-            width={150}
-            height={150}
             viewBox="0 0 60.601004 60.601004"
             xmlns="http://www.w3.org/2000/svg"
         >

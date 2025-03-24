@@ -7,9 +7,8 @@ import FanBoostButton from "./FanBoostButton.jsx";
 import useRotation from "./useRotation.js";
 import VerticalLayout from "../VerticalContainer/VerticalContainer.jsx";
 
-export default function FanSpeedControl({ onSpeedChange, onBoostChange, initialSpeed = 2, initialBoost = false }) {
+export default function FanSpeedControl({ onSpeedChange, onBoostChange, initialSpeed = 2, isBoosting = false }) {
     const [speed, setSpeed] = useState(initialSpeed);
-    const [boostActive, setBoostActive] = useState(initialBoost);
 
     const handleSpeedChange = (delta) => {
         setSpeed((currentSpeed) => {
@@ -19,18 +18,10 @@ export default function FanSpeedControl({ onSpeedChange, onBoostChange, initialS
         });
     };
 
-    const toggleBoost = () => {
-        setBoostActive( (boostState) => {
-            const newBoostState = !boostState;
-            if (onBoostChange) onBoostChange(newBoostState);
-            return newBoostState;
-        });
-    };
-
     return (
         <VerticalLayout id="fan-speed-control">
             <IncreaseSpeed onClick={() => handleSpeedChange(1)} />
-            {<FanBoostButton boostActive={boostActive} toggleBoost={toggleBoost} fanGroupRef={useRotation(boostActive)}/>}
+            {<FanBoostButton boostActive={isBoosting} toggleBoost={onBoostChange} fanGroupRef={useRotation(isBoosting)}/>}
             <FanDisplay speed={speed} />
             <DecreaseSpeed onClick={() => handleSpeedChange(-1)} />
         </VerticalLayout>
@@ -41,5 +32,5 @@ FanSpeedControl.propTypes = {
     onSpeedChange: PropTypes.func.isRequired,
     onBoostChange: PropTypes.func.isRequired,
     initialSpeed: PropTypes.number,
-    initialBoost: PropTypes.bool,
+    isBoosting: PropTypes.bool,
 };

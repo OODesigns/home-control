@@ -3,7 +3,6 @@
   display: grid;                    // Use CSS Grid layout
   grid-template-columns: repeat(2, 1fr); // Create 2 equal-width columns
   grid-auto-rows: 1fr;             // All rows have equal height
-  gap: var(--gap, 1rem);           // Space between items (default: 1rem)
   width: 100%;                     // Full container width
   margin-top: 2vmin;               // Top margin relative to viewport size
 }

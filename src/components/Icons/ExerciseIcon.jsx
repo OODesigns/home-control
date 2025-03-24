@@ -3,8 +3,6 @@ const ExerciseIcon = (props) => (
     <div className="icon">
         <svg
             xmlns="http://www.w3.org/2000/svg"
-            width={150}
-            height={150}
             viewBox="0 0 60.601 60.601"
             {...props}
         >

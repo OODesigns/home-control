@@ -19,14 +19,18 @@ export default function HomeView() {
     const [selectedMode, setSelectedMode] = useState("auto");
     const [status] = useState("exchanging");
     const [triggeredBySensor, setTriggeredBySensor ] = useState(false);
+    const [isBoostActive, setIsBoostActive] = useState(false);
 
     const handleSpeedChange = (newSpeed) => {
         console.log(`Speed changed to: ${newSpeed}`);
     };
 
-    const handleBoostChange = (boostActive) => {
-        console.log(`Boost is now: ${boostActive ? 'Active' : 'Inactive'}`);
-        setTriggeredBySensor(boostActive)
+    const handleBoostChange = () => {
+        setIsBoostActive((isBoostActive) => {
+            const newBoostValue = !isBoostActive;
+            setTriggeredBySensor(newBoostValue);
+            return newBoostValue;
+        });
     };
 
     const handleOnSelect = (selectedMode) => {
@@ -46,14 +50,9 @@ export default function HomeView() {
                        <FadingContainer show={triggeredBySensor}>
                            <ResponsiveLayout>
                             <ShowerIcon/>
-
                             <StairsIcon/>
                             <KitchenIcon/>
-
-
                             <ExerciseIcon/>
-
-
                            </ResponsiveLayout>
                        </FadingContainer>
                    </VerticalContainer>
@@ -67,7 +66,7 @@ export default function HomeView() {
                         onSpeedChange={handleSpeedChange}
                         onBoostChange={handleBoostChange}
                         initialSpeed={2}
-                        initialBoost={false}
+                        isBoosting={isBoostActive}
                     />
                 </HorizontalContainer>
             </div>
