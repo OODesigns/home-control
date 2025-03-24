@@ -1,5 +1,6 @@
 import * as React from "react"
 const StairsIcon = (props) => (
+    <div className="icon">
     <svg
         xmlns="http://www.w3.org/2000/svg"
         width={150}
@@ -107,5 +108,6 @@ const StairsIcon = (props) => (
             }}
         />
     </svg>
+    </div>
 )
 export default StairsIcon

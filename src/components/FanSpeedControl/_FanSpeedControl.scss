@@ -1,3 +1,6 @@
+@use 'FanBoostButton';
+@use 'FanDisplay';
+@use "FanButton";
 
 .fan-speed-control {
     display: flex;

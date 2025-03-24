@@ -9,17 +9,14 @@
 
   /* Starting at zero so it's effectively invisible and takes no space */
   max-height: 0;
-  opacity: 0;
-}
+  opacity: 0;}
 
 /* When 'show' is true => .open makes it fully visible with enough max-height */
 .fading-container.open {
   /*
     Make 'max-height' large enough to cover the typical height for your content.
-    If your content can be very tall, use a bigger value or consider a different approach
-    (e.g., measuring content height dynamically).
-  */
-  max-height: 1000px;
+ */
+  max-height: 80vh;
   opacity: 1;
 }
 

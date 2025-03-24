@@ -1,3 +1,6 @@
+@use "Step";
+@use "TemperatureValue";
+
 $size-vmin: 70vmin;
 
 .temperature-dial {
@@ -9,5 +12,7 @@ $size-vmin: 70vmin;
   border: 2px solid #1E90FF;
   margin: auto;
 }
+
+
 
 

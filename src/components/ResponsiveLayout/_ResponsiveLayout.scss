@@ -1,0 +1,20 @@
+.ResponsiveLayout {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 1fr;
+  gap: var(--gap, 1rem);
+  width: 100%;
+}
+.ResponsiveItem {
+  min-width: var(--min-column-width, 200px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.oddItem {
+    grid-column: 1 / -1;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: calc(var(--min-column-width, 200px) * 2 + var(--gap, 1rem));
+  }
+}

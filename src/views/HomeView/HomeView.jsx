@@ -7,9 +7,10 @@ import TemperatureDial from "../../components/TemperatureDial/TemperatureDial";
 import VerticalContainer from "../../components/VerticalContainer/VerticalContainer";
 import FadingContainer from "../../components/FadingContainer/FadingContainer";
 import ShowerIcon from "../../components/Icons/ShowerIcon";
-import BathIcon from "../../components/Icons/BathIcon";
 import StairsIcon from "../../components/Icons/StairsIcon";
 import KitchenIcon from "../../components/Icons/KitchenIcon";
+import ResponsiveLayout from "../../components/ResponsiveLayout/ResponsiveLayout";
+
 
 
 export default function HomeView() {
@@ -40,12 +41,16 @@ export default function HomeView() {
                         onSelect={handleOnSelect}
                         status={status}
                     />
-                    <FadingContainer show={triggeredBySensor}>
-                       <ShowerIcon/>
-                       <BathIcon/>
-                       <StairsIcon/>
-                       <KitchenIcon/>
-                    </FadingContainer>
+                       <FadingContainer show={triggeredBySensor}>
+                           <ResponsiveLayout>
+                            <ShowerIcon/>
+
+                            <StairsIcon/>
+                            <KitchenIcon/>
+
+
+                           </ResponsiveLayout>
+                       </FadingContainer>
                    </VerticalContainer>
                 </HorizontalContainer>
                 {/* Middle Flexible and Centered */}

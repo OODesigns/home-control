@@ -3,6 +3,7 @@ import React from 'react';
 const BathIcon = () => {
     const color = '#1e90ff'
     return (
+        <div className="icon">
         <svg
             width={150}
             height={150}
@@ -91,6 +92,7 @@ const BathIcon = () => {
                 />
             </g>
         </svg>
+        </div>
     );
 };
 
