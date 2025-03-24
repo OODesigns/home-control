@@ -11,6 +11,7 @@ import StairsIcon from "../../components/Icons/StairsIcon";
 import KitchenIcon from "../../components/Icons/KitchenIcon";
 import ResponsiveLayout from "../../components/ResponsiveLayout/ResponsiveLayout";
 import BathIcon from "../../components/Icons/BathIcon";
+import ExerciseIcon from "../../components/Icons/ExerciseIcon";
 
 
 
@@ -49,7 +50,8 @@ export default function HomeView() {
                             <StairsIcon/>
                             <KitchenIcon/>
 
-                               <BathIcon/>
+
+                            <ExerciseIcon/>
 
 
                            </ResponsiveLayout>
