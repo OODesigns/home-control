@@ -49,7 +49,7 @@ export default function HomeView() {
                        <FadingContainer show={triggeredBySensor}>
                            <ResponsiveLayout>
                             <ShowerIcon value={99}/>
-                            <StairsIcon/>
+                            <StairsIcon value={70}/>
                             <KitchenIcon/>
                             <ExerciseIcon/>
                            </ResponsiveLayout>
