@@ -1,6 +1,6 @@
 import React from 'react';
 
-const BathIcon = () => {
+const XBathIcon = () => {
     const color = '#1e90ff'
     return (
         <div className="icon">
@@ -94,4 +94,4 @@ const BathIcon = () => {
     );
 };
 
-export default BathIcon;
+export default XBathIcon;

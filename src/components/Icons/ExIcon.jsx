@@ -3,7 +3,7 @@ import { TextStyle } from "./TextStyle";
 
 const strokeColor = "#1e90ff";
 
-const StairsIcon = ({ value, ...props }) => (
+const ExIcon = ({ value, ...props }) => (
     <div className="icon">
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -50,4 +50,4 @@ const StairsIcon = ({ value, ...props }) => (
     </div>
 );
 
-export default StairsIcon;
+export default ExIcon;

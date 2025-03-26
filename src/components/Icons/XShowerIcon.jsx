@@ -3,7 +3,7 @@ import { TextStyle } from "./TextStyle";
 
 const strokeColor = "#1e90ff";
 
-const ShowerIcon = ({value, ...props}) => (
+const XShowerIcon = ({value, ...props}) => (
     <div className="icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60.601 60.601" {...props}>
             <path
@@ -49,4 +49,4 @@ const ShowerIcon = ({value, ...props}) => (
     </div>
 );
 
-export default ShowerIcon;
+export default XShowerIcon;

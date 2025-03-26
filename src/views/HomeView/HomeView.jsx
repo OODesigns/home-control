@@ -6,11 +6,17 @@ import {useState} from "react";
 import TemperatureDial from "../../components/TemperatureDial/TemperatureDial";
 import VerticalContainer from "../../components/VerticalContainer/VerticalContainer";
 import FadingContainer from "../../components/FadingContainer/FadingContainer";
-import StairsIcon from "../../components/Icons/StairsIcon";
-import KitchenIcon from "../../components/Icons/KitchenIcon";
+import XStairsIcon from "../../components/Icons/XStairsIcon";
+import XKitchenIcon from "../../components/Icons/xKitchenIcon";
 import ResponsiveLayout from "../../components/ResponsiveLayout/ResponsiveLayout";
-import ExerciseIcon from "../../components/Icons/ExerciseIcon";
-import ShowerIcon from "../../components/Icons/ShowerIcon";
+import XExerciseIcon from "../../components/Icons/XExerciseIcon";
+import XShowerIcon from "../../components/Icons/XShowerIcon";
+import ExIcon from "../../components/Icons/ExIcon";
+import SvgComponent from "../../components/Icons/SvgComponent";
+import SvgComponent2 from "../../components/Icons/SvgComponent2";
+import SvgComponent3 from "../../components/Icons/SvgComponent3";
+import SvgComponent4 from "../../components/Icons/SvgComponent4";
+import SvgComponent5 from "../../components/Icons/SvgComponent5";
 
 
 
@@ -48,10 +54,11 @@ export default function HomeView() {
                     />
                        <FadingContainer show={triggeredBySensor}>
                            <ResponsiveLayout>
-                            <ShowerIcon value={99}/>
-                            <StairsIcon value={70}/>
-                            <KitchenIcon/>
-                            <ExerciseIcon/>
+                            <SvgComponent2/>
+                            <SvgComponent4/>
+                            <SvgComponent/>
+                            <SvgComponent3/>
+                               <SvgComponent5/>
                            </ResponsiveLayout>
                        </FadingContainer>
                    </VerticalContainer>
