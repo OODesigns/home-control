@@ -6,19 +6,12 @@ import {useState} from "react";
 import TemperatureDial from "../../components/TemperatureDial/TemperatureDial";
 import VerticalContainer from "../../components/VerticalContainer/VerticalContainer";
 import FadingContainer from "../../components/FadingContainer/FadingContainer";
-import XStairsIcon from "../../components/Icons/XStairsIcon";
-import XKitchenIcon from "../../components/Icons/xKitchenIcon";
 import ResponsiveLayout from "../../components/ResponsiveLayout/ResponsiveLayout";
-import XExerciseIcon from "../../components/Icons/XExerciseIcon";
-import XShowerIcon from "../../components/Icons/XShowerIcon";
-import ExIcon from "../../components/Icons/ExIcon";
-import SvgComponent from "../../components/Icons/SvgComponent";
-import SvgComponent2 from "../../components/Icons/SvgComponent2";
-import SvgComponent3 from "../../components/Icons/SvgComponent3";
-import SvgComponent4 from "../../components/Icons/SvgComponent4";
-import SvgComponent5 from "../../components/Icons/SvgComponent5";
-
-
+import ShowerIcon from "../../components/Icons/ShowerIcon";
+import ExerciseIcon from "../../components/Icons/ExerciseIcon";
+import KitchenIcon from "../../components/Icons/KitchenIcon";
+import BathIcon from "../../components/Icons/BathIcon";
+import StairsIcon from "../../components/Icons/StairsIcon";
 
 export default function HomeView() {
     const [selectedMode, setSelectedMode] = useState("auto");
@@ -54,11 +47,11 @@ export default function HomeView() {
                     />
                        <FadingContainer show={triggeredBySensor}>
                            <ResponsiveLayout>
-                            <SvgComponent2/>
-                            <SvgComponent4/>
-                            <SvgComponent/>
-                            <SvgComponent3/>
-                               <SvgComponent5/>
+                            <StairsIcon value={55}/>
+                            <KitchenIcon value={45}/>
+                            <ShowerIcon value={35}/>
+                            <ExerciseIcon value={67}/>
+                            <BathIcon value={34}/>
                            </ResponsiveLayout>
                        </FadingContainer>
                    </VerticalContainer>

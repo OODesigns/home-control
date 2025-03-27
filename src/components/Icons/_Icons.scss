@@ -5,3 +5,70 @@
   justify-content: center;
   align-items: center;
 }
+
+.white-path {
+  fill: #fff;
+  fill-opacity: 1;
+  stroke: #fff;
+  stroke-width: 0.282726;
+  stroke-dasharray: none;
+  stroke-opacity: 1;
+}
+
+.blue-stroke {
+  fill: none;
+  stroke: #1e90ff;
+  stroke-linecap: butt;
+  stroke-linejoin: miter;
+  stroke-miterlimit: 4;
+}
+
+.white-path-empty {
+  fill: none;
+  stroke: #fff;
+  stroke-miterlimit: 10;
+  stroke-opacity: 1;
+}
+
+.exercise-base {
+  stroke: #1e90ff;
+}
+
+.stroke-wide {
+  stroke-width: 2.45811px;
+}
+
+.stroke-narrow {
+  stroke-width: 1.91px;
+}
+
+.bath-inline {
+  display: inline;
+  fill: #fff;
+  fill-opacity: 1;
+  stroke-dasharray: none;
+  stroke-width: 6.21906px;
+}
+
+.group-dash-none {
+  stroke-dasharray: none;
+}
+
+.group-stroke-0_712 {
+  stroke-width: 0.712083;
+}
+
+.group-stroke-0_47 {
+  stroke-width: 0.469788;
+}
+
+.group-stroke-0_377 {
+  stroke-width: 0.376909;
+}
+
+.group-stroke-6_219 {
+  stroke-width: 6.21906;
+}
+
+
+
