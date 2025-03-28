@@ -12,7 +12,7 @@ import ExerciseIcon from "../../components/Icons/ExerciseIcon";
 import KitchenIcon from "../../components/Icons/KitchenIcon";
 import BathIcon from "../../components/Icons/BathIcon";
 import StairsIcon from "../../components/Icons/StairsIcon";
-import COIcon from "../../components/Icons/COIcon";
+import ParticleIcon from "../../components/Icons/ParticleIcon";
 
 export default function HomeView() {
     const [selectedMode, setSelectedMode] = useState("auto");
@@ -53,7 +53,7 @@ export default function HomeView() {
                             <ShowerIcon value={35}/>
                             <ExerciseIcon value={67}/>
                             <BathIcon value={34}/>
-                            <COIcon value={734}/>
+                            <ParticleIcon value={34}/>
                            </ResponsiveLayout>
                        </FadingContainer>
                    </VerticalContainer>
