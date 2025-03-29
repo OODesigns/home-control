@@ -5,17 +5,11 @@ import VentModeSelector from "../../components/SelectSwitch/VentModeSelector";
 import {useState} from "react";
 import TemperatureDial from "../../components/TemperatureDial/TemperatureDial";
 import VerticalContainer from "../../components/VerticalContainer/VerticalContainer";
-import FadingContainer from "../../components/FadingContainer/FadingContainer";
-import ResponsiveLayout from "../../components/ResponsiveLayout/ResponsiveLayout";
-import RMShr from "../../components/Icons/RMShr";
-import ParticleStrs from "../../components/Icons/ParticleStrs";
-import VocStrs from "../../components/Icons/VocStrs";
-import COStrs from "../../components/Icons/COStrs";
+import SensorDisplay from "../../components/SensorDisplay/SensorDisplay";
 
 export default function HomeView() {
     const [selectedMode, setSelectedMode] = useState("auto");
     const [status] = useState("exchanging");
-    const [triggeredBySensor, setTriggeredBySensor ] = useState(false);
     const [isBoostActive, setIsBoostActive] = useState(false);
 
     const handleSpeedChange = (newSpeed) => {
@@ -25,7 +19,6 @@ export default function HomeView() {
     const handleBoostChange = () => {
         setIsBoostActive((isBoostActive) => {
             const newBoostValue = !isBoostActive;
-            setTriggeredBySensor(newBoostValue);
             return newBoostValue;
         });
     };
@@ -33,6 +26,13 @@ export default function HomeView() {
     const handleOnSelect = (selectedMode) => {
         setSelectedMode(selectedMode);
     }
+
+    const sensorData = [
+        { type: "humidity", option: "bath", value: 55 },
+        { type: "particle", value: 1.3 },
+        { type: "voc", value: 20 },
+        { type: "co", value: 700 },
+    ];
 
     return (
         <NavigationalContainer caption="Home">
@@ -44,14 +44,7 @@ export default function HomeView() {
                         onSelect={handleOnSelect}
                         status={status}
                     />
-                       <FadingContainer show={triggeredBySensor}>
-                           <ResponsiveLayout>
-                            <RMShr value={55}/>
-                            <ParticleStrs value={1.3}/>
-                            <VocStrs value={20}/>
-                            <COStrs value={700}/>
-                           </ResponsiveLayout>
-                       </FadingContainer>
+                   <SensorDisplay sensorData={sensorData}/>
                    </VerticalContainer>
                 </HorizontalContainer>
                 {/* Middle Flexible and Centered */}

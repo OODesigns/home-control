@@ -23,8 +23,8 @@
   stroke-miterlimit: 4;
 }
 
-.white-path-empty {
-  fill: none;
+.white-path-default {
+  fill: #fff;
   stroke: #fff;
   stroke-miterlimit: 10;
   stroke-opacity: 1;
@@ -48,26 +48,6 @@
   fill-opacity: 1;
   stroke-dasharray: none;
   stroke-width: 6.21906px;
-}
-
-.group-dash-none {
-  stroke-dasharray: none;
-}
-
-.group-stroke-0_712 {
-  stroke-width: 0.712083;
-}
-
-.group-stroke-0_47 {
-  stroke-width: 0.469788;
-}
-
-.group-stroke-0_377 {
-  stroke-width: 0.376909;
-}
-
-.group-stroke-6_219 {
-  stroke-width: 6.21906;
 }
 
 

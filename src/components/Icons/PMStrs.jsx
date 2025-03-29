@@ -1,7 +1,7 @@
 import React from "react";
 import ParticleIcon from "./ParticleIcon";
 
-const ParticleStrs   = React.memo((props ) => {return (
+const PMStrs   = React.memo((props ) => {return (
        <ParticleIcon {...props}>
            <path
                className="white-path"
@@ -13,4 +13,4 @@ const ParticleStrs   = React.memo((props ) => {return (
      );
 });
 
-export default ParticleStrs;
+export default PMStrs;
