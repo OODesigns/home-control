@@ -1,7 +1,7 @@
 import React from "react";
 import HumidityIcon from "./HumidityIcon";
 
-const StairsIcon   = React.memo((props ) => {return (
+const RMStrs   = React.memo((props ) => {return (
        <HumidityIcon {...props}>
            <path
                className="white-path"
@@ -13,4 +13,4 @@ const StairsIcon   = React.memo((props ) => {return (
      );
 });
 
-export default StairsIcon;
+export default RMStrs;

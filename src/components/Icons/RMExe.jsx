@@ -1,7 +1,7 @@
 import React from "react";
 import HumidityIcon from "./HumidityIcon";
 
-const ExerciseIcon = React.memo((props) => {
+const RMExe = React.memo((props) => {
     return (
         <HumidityIcon {...props}>
             <g transform="translate(-0.206 11.818) scale(0.83337)">
@@ -60,4 +60,4 @@ const ExerciseIcon = React.memo((props) => {
     );
 });
 
-export default ExerciseIcon;
+export default RMExe;

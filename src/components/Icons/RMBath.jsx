@@ -1,7 +1,7 @@
 import React from "react";
 import HumidityIcon from "./HumidityIcon";
 
-const BathIcon = React.memo((props) => {
+const RMBath = React.memo((props) => {
     return (
         <HumidityIcon {...props}>
             <g className="group-dash-none group-stroke-0_712">
@@ -36,4 +36,4 @@ const BathIcon = React.memo((props) => {
     );
 });
 
-export default BathIcon;
+export default RMBath;

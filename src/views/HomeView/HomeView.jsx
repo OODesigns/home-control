@@ -7,13 +7,10 @@ import TemperatureDial from "../../components/TemperatureDial/TemperatureDial";
 import VerticalContainer from "../../components/VerticalContainer/VerticalContainer";
 import FadingContainer from "../../components/FadingContainer/FadingContainer";
 import ResponsiveLayout from "../../components/ResponsiveLayout/ResponsiveLayout";
-import ShowerIcon from "../../components/Icons/ShowerIcon";
-import ExerciseIcon from "../../components/Icons/ExerciseIcon";
-import KitchenIcon from "../../components/Icons/KitchenIcon";
-import BathIcon from "../../components/Icons/BathIcon";
-import StairsIcon from "../../components/Icons/StairsIcon";
-import ParticleIcon from "../../components/Icons/ParticleIcon";
-import VocIcon from "../../components/Icons/VocIcon";
+import RMShr from "../../components/Icons/RMShr";
+import ParticleStrs from "../../components/Icons/ParticleStrs";
+import VocStrs from "../../components/Icons/VocStrs";
+import COStrs from "../../components/Icons/COStrs";
 
 export default function HomeView() {
     const [selectedMode, setSelectedMode] = useState("auto");
@@ -49,12 +46,10 @@ export default function HomeView() {
                     />
                        <FadingContainer show={triggeredBySensor}>
                            <ResponsiveLayout>
-                            <StairsIcon value={55}/>
-                            <KitchenIcon value={45}/>
-                            <ShowerIcon value={35}/>
-                            <ExerciseIcon value={67}/>
-                            <BathIcon value={34}/>
-                            <VocIcon value={34}/>
+                            <RMShr value={55}/>
+                            <ParticleStrs value={1.3}/>
+                            <VocStrs value={20}/>
+                            <COStrs value={700}/>
                            </ResponsiveLayout>
                        </FadingContainer>
                    </VerticalContainer>
