@@ -1,0 +1,70 @@
+
+// Base button styling
+.power-control {
+  // Sizing using viewport units for responsive scaling
+  width: 6vmin;
+  height: 6vmin;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+
+  // Center icon vertically and horizontally
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  // Smooth transitions for interactive effects
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 50%; // Creates circular button shape
+
+  // Hover state enhancements
+  &:hover {
+    transform: scale(1.1); // Slight enlargement
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.7); // Glow effect
+  }
+
+  // Active playing state
+  &.playing {
+    transform: scale(1.1); // Maintain enlarged size
+    box-shadow: 0 0 12px rgba(255, 255, 255, 1); // Stronger glow
+    outline: 2px solid rgba(255, 255, 255, 0.8); // Border emphasis
+
+    // SVG icon state management
+    svg {
+      .playing { opacity: 1; } // Show playing icon
+      .pausing { opacity: 0; } // Hide pause icon
+    }
+  }
+
+  // Paused state
+  &.pausing {
+    transform: scale(1); // Return to original size
+    box-shadow: none; // Remove glow
+
+    // Reverse icon visibility
+    svg {
+      .playing { opacity: 0; } // Hide playing icon
+      .pausing { opacity: 1; } // Show pause icon
+    }
+  }
+
+  // SVG icon styling
+  svg {
+    width: 100%;
+    height: 100%;
+
+    // All paths inherit these base styles
+    path {
+      transition: opacity 0.3s ease; // Smooth icon transitions
+      fill: #fff; // White icon color
+      fill-opacity: 1; // Ensure full opacity
+    }
+
+    // Special styling for outline path
+    .outline {
+      fill-rule: evenodd; // SVG rendering rules
+      clip-rule: evenodd;
+    }
+  }
+}
