@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
 
-const PlayControl = ({ status, onClick }) => (
+const SystemControl = ({ status, onClick }) => (
     <button
-        className={`power-control ${status === "playing" ? "playing" : "pausing"}`}
+        className={`pause-control ${status === "running" ? "running" : "pausing"}`}
         onClick={onClick}
-        aria-label="Power Control"
+        aria-label="Pause Control"
     >
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -14,7 +14,7 @@ const PlayControl = ({ status, onClick }) => (
             viewBox="0 0 28 28"
         >
             <path
-                className="playing"
+                className="running"
                 d="M10.5 9.8a.8.8 0 0 1 .8-.8h.4a.8.8 0 0 1 .8.8v8.4a.8.8 0 0 1-.8.8h-.4a.8.8 0 0 1-.8-.8V9.8ZM16.3 9a.8.8 0 0 0-.8.8v8.4a.8.8 0 0 0 .8.8h.4a.8.8 0 0 0 .8-.8V9.8a.8.8 0 0 0-.8-.8h-.4Z"
             />
             <path
@@ -31,9 +31,9 @@ const PlayControl = ({ status, onClick }) => (
     </button>
 );
 
-PlayControl.propTypes = {
+SystemControl.propTypes = {
     status: PropTypes.string.isRequired,
     onClick: PropTypes.func.isRequired,
 };
 
-export default PlayControl;
+export default SystemControl;

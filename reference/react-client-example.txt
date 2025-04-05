@@ -1,0 +1,95 @@
+// src/App.js
+import React, { useState, useEffect } from 'react';
+
+function App() {
+  const [authStatus, setAuthStatus] = useState(null);
+  const [data, setData] = useState({
+    temperature: 0,
+    sensorData: [],
+    systemState: '',
+  });
+  const [key, setKey] = useState('');
+  const [ws, setWs] = useState(null);
+
+  useEffect(() => {
+    // Replace with your server's actual subdomain if needed.
+    const websocket = new WebSocket('wss://myserver.mydomain.com:8080');
+    setWs(websocket);
+
+    websocket.onopen = () => {
+      console.log('Connected to WebSocket server');
+    };
+
+    websocket.onmessage = (event) => {
+      try {
+        const message = JSON.parse(event.data);
+        if (message.type === 'auth') {
+          if (message.status === 'cert-accepted') {
+            setAuthStatus('Authenticated via certificate');
+          } else if (message.status === 'request-key') {
+            setAuthStatus('Please enter key for authentication');
+          } else if (message.status === 'key-accepted') {
+            setAuthStatus('Authenticated via key');
+          } else if (message.status === 'key-rejected' || message.status === 'cert-rejected') {
+            setAuthStatus('Authentication failed');
+            websocket.close();
+          }
+        } else if (message.type === 'update') {
+          setData(message.data);
+        }
+      } catch (error) {
+        console.error('Error parsing received data:', error);
+      }
+    };
+
+    websocket.onerror = (error) => {
+      console.error('WebSocket error:', error);
+    };
+
+    websocket.onclose = () => {
+      console.log('WebSocket connection closed');
+    };
+
+    return () => {
+      websocket.close();
+    };
+  }, []);
+
+  const handleKeySubmit = () => {
+    if (ws && ws.readyState === WebSocket.OPEN) {
+      ws.send(JSON.stringify({ type: 'key-auth', key }));
+    }
+  };
+
+  return (
+    <div style={{ padding: 20 }}>
+      <h1>WebSocket Flexible Authentication</h1>
+      <h2>{authStatus}</h2>
+      {authStatus === 'Please enter key for authentication' && (
+        <div>
+          <input
+            type="text"
+            placeholder="Enter key"
+            value={key}
+            onChange={(e) => setKey(e.target.value)}
+          />
+          <button onClick={handleKeySubmit}>Submit Key</button>
+        </div>
+      )}
+      <div>
+        <h2>Temperature: {data.temperature} °C</h2>
+        <h3>System State: {data.systemState}</h3>
+        <h4>Sensor Data:</h4>
+        <ul>
+          {data.sensorData.map((sensor, index) => (
+            <li key={index}>
+              {sensor.type}{sensor.option ? ` (${sensor.option})` : ''}: {sensor.value}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+export default App;

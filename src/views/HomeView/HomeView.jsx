@@ -18,8 +18,7 @@ export default function HomeView() {
 
     const handleBoostChange = () => {
         setIsBoostActive((isBoostActive) => {
-            const newBoostValue = !isBoostActive;
-            return newBoostValue;
+            return !isBoostActive;
         });
     };
 
@@ -28,7 +27,7 @@ export default function HomeView() {
     }
 
     const sensorData = [
-        { type: "humidity", option: "bath", value: 55 },
+        { type: "humidity", option: "kitchen", value: 55 },
         { type: "particle", value: 1.3 },
         { type: "voc", value: 20 },
         { type: "co", value: 700 },

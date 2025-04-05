@@ -3,15 +3,15 @@ import React from "react";
 import FadingContainer from "../FadingContainer/FadingContainer";
 import ResponsiveLayout from "../ResponsiveLayout/ResponsiveLayout";
 import HumidityContainer from "../HumidityContainer/HumidityContainer";
-import PMStrs from "../Icons/PMStrs";
-import VocStrs from "../Icons/VocStrs";
-import COStrs from "../Icons/COStrs";
+import PMStairs from "../Icons/PMStairs";
+import VocStairs from "../Icons/VocStairs";
+import COStairs from "../Icons/COStairs";
 
 const sensorComponentMap = {
     humidity: HumidityContainer,
-    particle: PMStrs,
-    voc: VocStrs,
-    co: COStrs,
+    particle: PMStairs,
+    voc: VocStairs,
+    co: COStairs,
 };
 
 const SensorDisplay = ({ sensorData }) => {

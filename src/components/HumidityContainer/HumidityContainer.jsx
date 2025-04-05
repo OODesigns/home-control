@@ -1,7 +1,7 @@
 import RMShr from "../Icons/RMShr";
 import RMBath from "../Icons/RMBath";
 import RMExe from "../Icons/RMExe";
-import RMStrs from "../Icons/RMStrs";
+import RMStairs from "../Icons/RMStairs";
 import RMKit from "../Icons/RMKit";
 import HumidityIcon from "../Icons/HumidityIcon";
 
@@ -9,7 +9,7 @@ const HumidityOptions = {
     shower: RMShr,
     bath: RMBath,
     exercise: RMExe,
-    stairs: RMStrs,
+    stairs: RMStairs,
     kitchen: RMKit,
 };
 
