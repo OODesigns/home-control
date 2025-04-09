@@ -1,6 +1,6 @@
 
 // Base button styling
-.startPause-control {
+.system-Control {
   // Sizing using viewport units for responsive scaling
   width: 6vmin;
   height: 6vmin;
@@ -24,15 +24,14 @@
     box-shadow: 0 0 8px rgba(255, 255, 255, 0.7); // Glow effect
   }
 
-  // Active starting state
-  &.starting {
+  &.running {
     transform: scale(1.1); // Maintain enlarged size
     box-shadow: 0 0 12px rgba(255, 255, 255, 1); // Stronger glow
     outline: 2px solid rgba(255, 255, 255, 0.8); // Border emphasis
 
     // SVG icon state management
     svg {
-      .starting { opacity: 1; } // Show starting icon
+      .running { opacity: 1; } // Show starting icon
       .pausing { opacity: 0; } // Hide pause icon
     }
   }
@@ -44,7 +43,7 @@
 
     // Reverse icon visibility
     svg {
-      .starting { opacity: 0; } // Hide starting icon
+      .running { opacity: 0; } // Hide starting icon
       .pausing { opacity: 1; } // Show pause icon
     }
   }

@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 const SystemControl = ({ status, onClick }) => (
     <button
-        className={`pause-control ${status === "running" ? "running" : "pausing"}`}
+        className={`system-Control ${status === "running" ? "running" : "pausing"}`}
         onClick={onClick}
         aria-label="Pause Control"
     >
