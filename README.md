@@ -2,6 +2,8 @@
 
 A smart, intuitive React web application designed for controlling your home’s ventilation system. With this application you can manage fan speeds and boost levels, choose between MVHR (Mechanical Ventilation with Heat Recovery) or Purging modes, or let the system auto-select the optimal mode. Additionally, real-time sensor notifications inform you exactly which sensor was triggered and where it’s located.
 
+The UI is design using SVG only, so it is totally scalable, allowing to fix any screen as required. 
+
 
 ![front-screen](https://github.com/user-attachments/assets/696e734d-54b0-4f55-aca9-e46ede7da129)
 
