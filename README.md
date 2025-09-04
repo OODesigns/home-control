@@ -1,133 +1,145 @@
 # Home Control React Frontend
 
-A smart, intuitive React web application designed for controlling your home’s ventilation system. With this application you can manage fan speeds and boost levels, choose between MVHR (Mechanical Ventilation with Heat Recovery) or Purging modes, or let the system auto-select the optimal mode. Additionally, real-time sensor notifications inform you exactly which sensor was triggered and where it’s located.
+A smart, intuitive React web application for controlling your home’s ventilation system.
 
-The UI is design using SVG only, so it is totally scalable, allowing to fix any screen as required. 
+![Front Screen](https://github.com/user-attachments/assets/696e734d-54b0-4f55-aca9-e46ede7da129)
 
-This is a start of a home control system I am making;
+---
 
-![front-screen](https://github.com/user-attachments/assets/696e734d-54b0-4f55-aca9-e46ede7da129)
+## Features
 
-# How it fits together
+- **Fan Speed & Boost Controls:**  Interactive sliders for precise control.
+- **Mode Selection:**
+  - Manual selection between MVHR or Purging modes.
+  - Auto mode allows system-driven switching based on sensor input.
+- **Real-time Sensor Notifications:** Instantly see which sensor was triggered and its location.
+- **Responsive Design:**  100% SVG-based UI for perfect scaling on any screen.
 
-**Web Portal & Kiosk System**
-This is part of a full-stack application for the Web Portal and Kiosk System. The architecture is designed to be a modern, scalable microservice-based system with a clear separation of concerns between the user-facing front-end, a back-end facade, and the core microservices.
+---
 
-**Architecture Overview**
+## Table of Contents
+- [Project Overview](#project-overview)
+- [Architecture](#architecture)
+- [UX Design](#ux-design)
+- [Features](#features)
+- [Prerequisites](#prerequisites)
+- [Getting Started](#getting-started)
+- [Operation Modes](#operation-modes)
+- [Sensor Integration](#sensor-integration)
+- [License](#license)
 
-The system is composed of several key components that work together to provide a seamless user experience and secure communication. The front-end, built with React, serves as the user interface for both the Web Portal and the Kiosk Device. This front-end communicates with a Java-based facade, which in turn routes requests to a set of underlying microservices.
+---
 
-Key Components
+## Project Overview
 
-    Web Portal (this project): A front-end application built with React, providing a user interface for managing and interacting with the system. It handles user authentication through the Auth Service.
+This project is the front-end for a modern, scalable microservice-based home control system. It targets both web portals and kiosk devices, providing a unified, seamless user experience powered by React.
 
-    Kiosk Device (this project): A physical device that runs a front-end application (also built with React) similar to the Web Portal, but with specific functionality for the kiosk environment. It uses a certificate-based authentication method with the Auth Service.
+## Architecture
 
-    Java Backend Facade: This facade acts as a single point of entry for the front-end applications, routing requests to the appropriate microservices. It simplifies the front-end's interaction with the system by abstracting the microservice architecture, including s centralized backend service.
+The system consists of several core components:
 
-    Central Authentication Service: A dedicated microservice responsible for all authentication and authorization within the system. It manages user logins for the Web Portal and handles certificate-based authentication for the Kiosk Device. It contains a Token Issuer, Refresh Manager, and a User DB / M2M Store for managing credentials and tokens.
+- **Web Portal & Kiosk (this project):**
+  - React-based UI for web/kiosk control and monitoring
+- **Java Backend Facade:**
+  - Unified API gateway for authentication, request routing, and abstraction of microservices
+- **Central Authentication Service:**
+  - Handles user logins (web) and certificate-based authentication (kiosk)
+- **System Controller:**
+  - Manages all key system logic
+- **Microservices:**
+  - Specialized services for device integration, automation, and more
 
-    System Controller: It's responsible for managing and orchestrating the system's core functions. 
+### High-Level Design
 
-Technology Stack
+```
+┌─────────────────────┐
+│ Web Portal / Kiosk  │  (This Project)
+└──────────┬──────────┘
+           │ Requests              (REST)
+           │  ▲
+           │  │ Server-Sent Events (SSE)
+           ▼  │
+┌──────────────────────────────────────┐
+│         Java Backend Facade          │
+└──────────────────────────────────────┘
+           │ Requests              (gRPC)
+           ▼
+┌────────────────────────────────────────────────────────────────────────────────────────────┐
+│                                       Microservices                                        │
+│                                                                                            │
+│  ┌─────────────────────────┐    ┌─────────────────────────┐    ┌─────────────────────────┐ │
+│  │     System Controller   │    │   Central Auth System   │    │  Device Integrations    │ │
+│  └─────────────────────────┘    └─────────────────────────┘    └─────────────────────────┘ │
+└────────────────────────────────────────────────────────────────────────────────────────────┘
+```
 
-    Frontend: React
+#### Technology Stack
+- **Frontend:** React
+- **Backend Facade:** Java
+- **Microservices:** Java, Python
+- **Authentication:** Central custom microservice
 
-    Backend Facade: Java
+## UX Design
 
-    Microservices: Java, Python
+The interface is designed with user-friendliness and efficiency in mind. Main functions include:
 
-    Authentication: Central Authentication Service (custom microservice)
+- Adjust fan speed and boost power.
+- Select MVHR, Purging, or Auto ventilation mode.
+- Receive live notifications about sensor events.
+- View clear, scalable SVG-based visuals.
 
-# High level Design
+The UI is fully responsive and works across all devices.
 
-    ┌─────────────────────┐
-    │ Web Portal / Kiosk  │  (This Project)
-    └──────────┬──────────┘
-               │ Requests              (REST)
-               │  ▲
-               │  │ Server-Sent Events (SSE)
-               ▼  │
-    ┌──────────────────────────────────────┐
-    │         Java Backend Facade          │
-    └──────────────────────────────────────┘
-               │ Requests              (gRPC)
-               ▼
-    ┌────────────────────────────────────────────────────────────────────────────────────────────┐
-    │                                       Microservices                                        │
-    │                                                                                            │
-    │  ┌─────────────────────────┐    ┌─────────────────────────┐    ┌─────────────────────────┐ │
-    │  │     System Controller   │    │   Central Auth System   │    │  Device Integrations    │ │
-    │  └─────────────────────────┘    └─────────────────────────┘    └─────────────────────────┘ │
-    └────────────────────────────────────────────────────────────────────────────────────────────┘
+### Example Use Cases
+- Manually set your preferred ventilation mode.
+- Let the system automatically optimize ventilation.
+- Instantly respond to alerts from home sensors.
 
-# The UX Design
+## Prerequisites
 
-This project provides a user-friendly interface to control key aspects of your home’s ventilation system. Using intuitive controls, you can:
+- [Node.js](https://nodejs.org/) (v14+ recommended)
+- [npm](https://www.npmjs.com/)
+- Modern Web Browser (Chrome, Firefox, etc.)
 
-    Adjust the fan speed and boost levels.
+## Getting Started
 
-    Manually select between MVHR and Purging modes, or use the auto mode to let the system decide based on sensor input.
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/yourusername/home-control.git
+   cd home-control
+   ```
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+3. **Start the development server:**
+   ```bash
+   npm start
+   ```
+    - Application will run at [http://localhost:3000](http://localhost:3000)
 
-    View live alerts from sensors, indicating exactly which sensor was triggered and in what area.
+4. **Production build:**
+   ```bash
+   npm run build
+   ```
 
-Whether you’re a tech enthusiast or a homeowner looking for a simplified smart home control, this React frontend makes managing your home environment both simple and efficient.
-Features
+---
 
-    Fan Speed & Boost Controls:
-    Easily adjust the fan speed and boost power with interactive sliders.
+## Operation Modes
 
-    Mode Selection:
+- **Manual Mode:** User selects MVHR or Purging.
+- **Auto Mode:** System chooses optimal mode based on live sensor data.
+- **Fan Controls:** Adjust speed and boost using the interactive UI.
 
-        Manual Mode: Directly choose between MVHR and Purging.
+## Sensor Integration
 
-        Auto Mode: Allow the system to automatically select the most appropriate mode based on sensor data.
+Integrated sensors monitor your home and trigger alerts. For every sensor event:
 
-    Sensor Notifications:
-    Real-time display of sensor triggers, including sensor identification and location details, ensuring you’re always informed of environmental changes.
+- The triggered sensor and its location are displayed.
+- You can quickly identify and respond to any potential issue.
 
-    Responsive Design:
-    A clean, modern UI built with React that works seamlessly on both desktop and mobile devices.
+---
 
-# Prerequisites
+## License
 
-Before you begin, ensure you have the following installed:
-
-    Node.js (version 14 or above recommended)
-
-    npm
-
-    A modern web browser (Chrome, Firefox, or any equivalent)
-
-# Installation
-git clone https://github.com/yourusername/home-control.git
-cd home-control
-
-Install dependencies: npm install
-Running the Application
-To start the development server: npm start 
-
-Your application should now be running at http://localhost:3000. Enjoy watching live updates as you test the home-control features.
-Production Build
-
-# Operation
-The application supports three main configurations for operation:
-
-    Manual Mode:
-    You choose whether to use MVHR or Purging.
-
-    Auto Mode:
-    The system automatically selects between MVHR and Purging based on sensor input. This is perfect for adapting to real-time conditions.
-
-    Fan Controls:
-    Adjust the fan’s speed and boost level using sliders or buttons, to customize your home’s ventilation based on your comfort needs.
-
-Sensor Integration
-
-Sensors are integrated to monitor home conditions and trigger alerts. When a sensor is activated:
-
-    The system displays a notification identifying which sensor was triggered.
-
-    You see the exact location in your home where the trigger occurred, allowing for quick troubleshooting or environmental adjustments.
- 
-
+This project is provided as-is for personal, non-commercial use. For licensing or commercial use, contact the author.
