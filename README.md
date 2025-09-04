@@ -129,5 +129,5 @@ Sensors are integrated to monitor home conditions and trigger alerts. When a sen
     The system displays a notification identifying which sensor was triggered.
 
     You see the exact location in your home where the trigger occurred, allowing for quick troubleshooting or environmental adjustments.
-
+ 
 
