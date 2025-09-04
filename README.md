@@ -4,36 +4,64 @@ A smart, intuitive React web application designed for controlling your home’s 
 
 The UI is design using SVG only, so it is totally scalable, allowing to fix any screen as required. 
 
+This is a start of a home control system I am making;
 
 ![front-screen](https://github.com/user-attachments/assets/696e734d-54b0-4f55-aca9-e46ede7da129)
 
-# Table of Contents
+# How it fits together
 
-    Overview
+**Web Portal & Kiosk System**
+This is part of a full-stack application for the Web Portal and Kiosk System. The architecture is designed to be a modern, scalable microservice-based system with a clear separation of concerns between the user-facing front-end, a back-end facade, and the core microservices.
 
-    Features
+**Architecture Overview**
 
-    Prerequisites
+The system is composed of several key components that work together to provide a seamless user experience and secure communication. The front-end, built with React, serves as the user interface for both the Web Portal and the Kiosk Device. This front-end communicates with a Java-based facade, which in turn routes requests to a set of underlying microservices.
 
-    Installation
+Key Components
 
-    Running the Application
+    Web Portal (this project): A front-end application built with React, providing a user interface for managing and interacting with the system. It handles user authentication through the Auth Service.
 
-    Configuration
+    Kiosk Device (this project): A physical device that runs a front-end application (also built with React) similar to the Web Portal, but with specific functionality for the kiosk environment. It uses a certificate-based authentication method with the Auth Service.
 
-    Folder Structure
+    Java Backend Facade: This facade acts as a single point of entry for the front-end applications, routing requests to the appropriate microservices. It simplifies the front-end's interaction with the system by abstracting the microservice architecture, including s centralized backend service.
 
-    Development Notes
+    Central Authentication Service: A dedicated microservice responsible for all authentication and authorization within the system. It manages user logins for the Web Portal and handles certificate-based authentication for the Kiosk Device. It contains a Token Issuer, Refresh Manager, and a User DB / M2M Store for managing credentials and tokens.
 
-    Customization & Contributing
+    System Controller: It's responsible for managing and orchestrating the system's core functions. 
 
-    Troubleshooting
+Technology Stack
 
-    License
+    Frontend: React
 
-    Acknowledgements
+    Backend Facade: Java
 
-# Overview
+    Microservices: Java, Python
+
+    Authentication: Central Authentication Service (custom microservice)
+
+# High level Design
+
+    ┌─────────────────────┐
+    │ Web Portal / Kiosk  │  (This Project)
+    └──────────┬──────────┘
+               │ Requests              (REST)
+               │  ▲
+               │  │ Server-Sent Events (SSE)
+               ▼  │
+    ┌──────────────────────────────────────┐
+    │         Java Backend Facade          │
+    └──────────────────────────────────────┘
+               │ Requests              (gRPC)
+               ▼
+    ┌────────────────────────────────────────────────────────────────────────────────────────────┐
+    │                                       Microservices                                        │
+    │                                                                                            │
+    │  ┌─────────────────────────┐    ┌─────────────────────────┐    ┌─────────────────────────┐ │
+    │  │     System Controller   │    │   Central Auth System   │    │  Device Integrations    │ │
+    │  └─────────────────────────┘    └─────────────────────────┘    └─────────────────────────┘ │
+    └────────────────────────────────────────────────────────────────────────────────────────────┘
+
+# The UX Design
 
 This project provides a user-friendly interface to control key aspects of your home’s ventilation system. Using intuitive controls, you can:
 
@@ -67,53 +95,22 @@ Before you begin, ensure you have the following installed:
 
     Node.js (version 14 or above recommended)
 
-    npm (or yarn)
+    npm
 
     A modern web browser (Chrome, Firefox, or any equivalent)
 
 # Installation
-
-    Clone the repository:
-
 git clone https://github.com/yourusername/home-control.git
 cd home-control
 
-Install dependencies:
-
-If you’re using npm:
-
-npm install
-
-Or if you prefer yarn:
-
-    yarn install
-
+Install dependencies: npm install
 Running the Application
-Development Server
-
-To start the development server:
-
-npm start
-
-or if using yarn:
-
-yarn start
+To start the development server: npm start 
 
 Your application should now be running at http://localhost:3000. Enjoy watching live updates as you test the home-control features.
 Production Build
 
-To prepare the project for production:
-
-npm run build
-
-or with yarn:
-
-yarn build
-
-This command creates an optimized build in the build/ folder, which you can then deploy to your favorite hosting service.
-Configuration
-Mode Options
-
+# Operation
 The application supports three main configurations for operation:
 
     Manual Mode:
